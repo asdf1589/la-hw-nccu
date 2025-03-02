@@ -1,0 +1,292 @@
+\documentclass{report}
+
+\usepackage{ctex}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\ctexset{
+    today=old
+}
+
+\title{\Huge{Linear Algebra}\\ Assignment 1}
+\author{\Large{110307039\ 財管四\ 黃柏維}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\cleardoublepage
+
+\qs{}{Find the inverse of the following matrices:
+    \[
+        A = \begin{bmatrix}
+            -\frac{5}{6} & \frac{1}{3}  & \frac{11}{6} \\
+            0            & \frac{2}{3}  & 2            \\
+            1            & -\frac{1}{2} & -\frac{5}{2}
+        \end{bmatrix},\quad
+        B = \begin{bmatrix}
+            3  & 2 & 5 \\
+            2  & 2 & 4 \\
+            -4 & 4 & 0
+        \end{bmatrix}
+    \]
+}
+
+\solve{
+    \begin{enumerate}
+        \item For matrix $A$, let
+              \[
+                  A  = \begin{bmatrix}
+                      \bmA_1 \\ \bmA_2 \\ \bmA_3
+                  \end{bmatrix}
+              \]
+              where $\bmA_1,\ \bmA_2,\ \bmA_3$ are the rows of matrix $A$. Then we have
+              \[
+                  -12\bmA_1 - \frac{3}{2}\bmA_2 - 10\bmA_3 = \mathbf{0},
+              \]
+              which implies that the rows of $A$ are linearly dependent, therefore the
+              inverse of matrix $A$ does not exist.
+
+        \item For matrix $B$, we have
+              \[
+                  \det(B) = \begin{vmatrix}
+                      3  & 2 & 5 \\
+                      2  & 2 & 4 \\
+                      -4 & 4 & 0
+                  \end{vmatrix}
+                  = \begin{vmatrix}
+                      3 & 2 & 5 \\
+                      2 & 2 & 4 \\
+                      0 & 8 & 8
+                  \end{vmatrix}
+                  = 8\cdot\begin{vmatrix}
+                      3 & 0 & 3 \\
+                      2 & 0 & 2 \\
+                      0 & 1 & 1
+                  \end{vmatrix}
+                  = 0.
+              \]
+              Since the determinant of $B$ is zero, the inverse of matrix $B$ does not
+              exists.
+    \end{enumerate}
+}
+
+\qs{}{ Find $(AB)^{-1},(A^{T})^{-1}$ and $(2A)^{-1}$ where
+    \[
+        A = \begin{bmatrix}
+            1 & -4 & 2 \\
+            0 & 1  & 3 \\
+            4 & 2  & 1
+        \end{bmatrix},\quad
+        B = \begin{bmatrix}
+            1 & 0 & 0 \\
+            1 & 1 & 0 \\
+            0 & 1 & 1
+        \end{bmatrix}
+    \]
+}
+
+\solve{
+    The inverse of matrix $A$ and $B$ are
+    \[
+        A^{-1} = \frac{1}{61}\begin{bmatrix}
+            5   & -8 & -14 \\
+            -12 & 7  & 3   \\
+            4   & 18 & -1
+        \end{bmatrix},\quad
+        B^{-1} = \begin{bmatrix}
+            1  & 0  & 0 \\
+            -1 & 1  & 0 \\
+            1  & -1 & 1
+        \end{bmatrix}.
+    \]
+    Therefore, we have
+    \begin{enumerate}
+        \item $(AB)^{-1} = B^{-1}A^{-1} = \frac{1}{61}\begin{bmatrix}
+                      5   & -8 & -14 \\
+                      -17 & 15 & -11 \\
+                      21  & 3  & 10
+                  \end{bmatrix}$.
+        \item $(A^{T})^{-1} = (A^{-1})^{T} = \frac{1}{61}\begin{bmatrix}
+                      5   & -12 & 4  \\
+                      -8  & 7   & 18 \\
+                      -14 & 3   & -1
+                  \end{bmatrix}$.
+        \item $(2A)^{-1} = 2^{-1}A^{-1} = \frac{1}{122}\begin{bmatrix}
+                      5   & -8 & -14 \\
+                      -12 & 7  & 3   \\
+                      4   & 18 & -1
+                  \end{bmatrix}$.
+    \end{enumerate}
+}
+
+\qs{}{Find a sequence of elementary matrices that can be used to write the matrix $A$ in row-echelon form, where
+    \[
+        A = \begin{bmatrix}
+            1 & 3  & 0  \\
+            2 & 5  & -1 \\
+            3 & -2 & -4
+        \end{bmatrix}
+    \]
+}
+\solve{
+    We firstly do the following row operations:
+    \[
+        1.\quad \begin{align*}
+             & R_2 \leftarrow R_2 - 2R_1 \\
+             & R_3 \leftarrow R_3 - 3R_1
+        \end{align*}
+        \implies A \stackrel{\mathrm{r}}{\sim}
+        \begin{bmatrix}
+            1 & 3   & 0  \\
+            0 & -1  & -1 \\
+            0 & -11 & -4
+        \end{bmatrix}\\
+    \]
+    and
+    \[
+        2. \quad & R_3 \leftarrow R_3 - 11R_2
+        \implies A \stackrel{\mathrm{r}}{\sim}
+        \begin{bmatrix}
+            1 & 3  & 0  \\
+            0 & -1 & -1 \\
+            0 & 0  & 7
+        \end{bmatrix}
+        \triangleq U.
+    \]
+    Therefore, the matrix $A$ can be written in row-echelon form by
+    \[
+        E_2E_1A = U,
+    \]
+    where
+    \[
+        E_1 = \begin{bmatrix}
+            1  & 0 & 0 \\
+            -2 & 1 & 0 \\
+            -3 & 0 & 1
+        \end{bmatrix},\quad
+        E_2 = \begin{bmatrix}
+            1 & 0  & 0 \\
+            0 & 1  & 0 \\
+            0 & 11 & 1
+        \end{bmatrix}.
+    \]
+}
+
+\qs{}{Find and LU-factorization of the matrix $A$, where
+    \[
+        A = \begin{bmatrix}
+            2  & 0  & 0 \\
+            0  & -3 & 1 \\
+            10 & 12 & 3
+        \end{bmatrix}
+    \]
+}
+\solve{
+    We can factorize the matrix $A$ by
+    \[
+        A = \begin{bmatrix}
+            2  & 0  & 0 \\
+            0  & -3 & 1 \\
+            10 & 12 & 3
+        \end{bmatrix}
+        = \begin{bmatrix}
+            1 & 0  & 0 \\
+            0 & 1  & 0 \\
+            5 & -4 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            2 & 0  & 0 \\
+            0 & -3 & 1 \\
+            0 & 0  & 7
+        \end{bmatrix}
+        = LU.
+    \]
+}
+
+\qs{}{Use and LU-factorization to solve the system of linear equations
+    \[
+        \begin{cases}
+            2x_1 = 4               \\
+            -2x_1 + x_2 - x_3= -4  \\
+            6x_1 + 2x_2 + x_3 = 15 \\
+            -x_4 = -1
+        \end{cases}
+    \]
+}
+\solve{
+The system of linear equations can be written in matrix form as
+\[
+    \begin{bmatrix}
+        2  & 0 & 0  & 0  \\
+        -2 & 1 & -1 & 0  \\
+        6  & 2 & 1  & 0  \\
+        0  & 0 & 0  & -1
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1 \\ x_2 \\ x_3 \\ x_4
+    \end{bmatrix}
+    = \begin{bmatrix}
+        4 \\ -4 \\ 15 \\ -1
+    \end{bmatrix}.
+\]
+Let the equation be $A\bmx = \bmb$. We can factorize the coefficient matrix by
+\[
+    \begin{bmatrix}
+        2  & 0 & 0  & 0  \\
+        -2 & 1 & -1 & 0  \\
+        6  & 2 & 1  & 0  \\
+        0  & 0 & 0  & -1
+    \end{bmatrix}
+    = \begin{bmatrix}
+        1  & 0 & 0 & 0 \\
+        -1 & 1 & 0 & 0 \\
+        3  & 0 & 1 & 0 \\
+        0  & 0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        2 & 0 & 0  & 0  \\
+        0 & 1 & -1 & 0  \\
+        0 & 0 & 3  & 0  \\
+        0 & 0 & 0  & -1
+    \end{bmatrix}
+    = LU.
+\]
+Further let $U\bmx = \bmy$, where $\bmy = [y_1,\ y_2,\ y_3,\ y_4]^T$. We can
+solve the system of linear equations by firstly solving $L\bmy = \bmb$ and then
+solving $U\bmx = \bmy$.
+\[
+    \begin{cases}
+        y_1 = 4          \\
+        - y_1 + y_2 = -4 \\
+        3y_1 + y_3 = 15  \\
+        y_4 = -1
+    \end{cases}
+    \implies
+    \begin{cases}
+        y_1 = 4 \\
+        y_2 = 0 \\
+        y_3 = 3 \\
+        y_4 = -1
+    \end{cases}\\
+\]
+\[
+    \begin{cases}
+        2x_1 = 4      \\
+        x_2 - x_3 = 0 \\
+        3x_1 = 3      \\
+        -x_4 = -1
+    \end{cases}
+    \implies
+    \begin{cases}
+        x_1 = 2 \\
+        x_2 = 1 \\
+        x_3 = 1 \\
+        x_4 = 1
+    \end{cases}.
+\]
+}
+
+\end{document}
