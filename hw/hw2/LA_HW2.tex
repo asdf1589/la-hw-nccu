@@ -184,11 +184,11 @@ matrix $\overline{X}$ does not exist. }
                       8    & 14 \\
                       0    & 18 \\
                       5    & 20 \\
-                      21\,  & 18 \\
+                      21\, & 18 \\
                       14   & 0  \\
                       20\, & 15 \\
                       0    & 2  \\
-                      1\: & 19 \\
+                      1\:  & 19 \\
                       5    & 0
                   \end{bmatrix}
               \]
@@ -278,29 +278,29 @@ matrix $\overline{X}$ does not exist. }
     where
     \[
         A = \begin{bmatrix}
-            3 & 0 & 7 & 0 \\
+            3 & 0 & 7  & 0  \\
             2 & 6 & 11 & 12 \\
-            4 & 1 & -1 & 2 \\
-            1 & 5 & 2 & 10
+            4 & 1 & -1 & 2\, \\
+            1 & 5 & 2\, & 10
         \end{bmatrix}.
     \]
 }
 \solve{
     The cofactor expansion by the first row of \( A \) is
     \[
-    \begin{align}
-        \det(A) &= 3 \begin{vmatrix}
-            6  & 11 & 12 \\
-            1  & -1 & 2  \\
-            5  & 2  & 10
-        \end{vmatrix} - 0 + 7 \begin{vmatrix}
-            2  & 11 & 12 \\
-            4  & -1 & 2  \\
-            1  & 2  & 10
-        \end{vmatrix} - 0
-        &= 3 \cdot 0 - 7 \cdot (- 338) = 2366.
-    \end{align}
+        \begin{align}
+            \det(A) & = 3 \begin{vmatrix}
+                              6 & 11 & 12 \\
+                              1 & -1 & 2  \\
+                              5 & 2  & 10
+                          \end{vmatrix} - 0 + 7 \begin{vmatrix}
+                                                    2 & 11 & 12 \\
+                                                    4 & -1 & 2  \\
+                                                    1 & 2  & 10
+                                                \end{vmatrix} - 0
+                    & = 3 \cdot 0 - 7 \cdot (- 338) = 2366.
+        \end{align}
     \]
-    Note that the first term is zero because the first column is linearly dependent on the third column.    
-}    
+    Note that the first term is zero because the first column is linearly dependent
+    on the third column. }
 \end{document}
