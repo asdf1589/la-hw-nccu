@@ -1,0 +1,942 @@
+\documentclass{report}
+
+\usepackage{ctex}
+
+\input{../module/preamble}
+\input{../module/macros}
+\input{../module/letterfonts}
+
+\ctexset{
+    today=old
+}
+
+\title{\Huge{Linear Algebra}\\ Assignment 3}
+\author{\Large{110307039\ 財管四\ 黃柏維}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\cleardoublepage
+
+\qs{}{(CH3.1 P116 Q18) Find the determinant of the maxtrix \( A \) using the method of expansion by cofactors.
+    \begin{enumerate}[label=(\alph*)]
+        \item the third row and
+        \item the first column.
+    \end{enumerate}, where
+    \[
+        A = \begin{bmatrix}
+            - 3 & 4   & 2   \\
+            6\, & 3\, & 1\, \\
+            4\, & - 7 & - 8
+        \end{bmatrix}.
+    \]
+}
+\solve{\begin{enumerate}[label=(\alph*)]
+        \item \[
+                  \begin{align*}
+                      \det(A) & = 4 \begin{vmatrix}
+                                        4 & 2 \\
+                                        3 & 1
+                                    \end{vmatrix} + 7 \begin{vmatrix}
+                                                          - 3 & 2 \\
+                                                          6   & 1
+                                                      \end{vmatrix} - 8 \begin{vmatrix}
+                                                                            - 3 & 4 \\
+                                                                            6   & 3
+                                                                        \end{vmatrix}
+                              & = 4(4 - 6) + 7(- 3 - 12) - 8(- 9 - 24)
+                              & = - 8 - 105 + 264
+                              & = 151.
+                  \end{align*}
+              \]
+
+        \item \[
+                  \begin{align*}
+                      \det(A) & = - 3 \begin{vmatrix}
+                                          3   & 1   \\
+                                          - 7 & - 8
+                                      \end{vmatrix} - 6 \begin{vmatrix}
+                                                            4   & 2   \\
+                                                            - 7 & - 8
+                                                        \end{vmatrix} + 4 \begin{vmatrix}
+                                                                              4 & 2 \\
+                                                                              3 & 1
+                                                                          \end{vmatrix}
+                              & = - 3(- 24 + 7) - 6(- 32 + 14) + 4(4 - 6)
+                              & = - 91 + 108 - 8
+                              & = 9.
+                  \end{align*}
+              \]
+    \end{enumerate}}
+
+\qs{}{(CH3.1 P117 Q52) Find the values of \( \lambda \) for which the determinant is zero.
+    \[
+        \begin{vmatrix}
+            \lambda & 0       & 1           \\
+            0       & \lambda & 3\,         \\
+            2       & 2       & \lambda - 2
+        \end{vmatrix}
+    \]
+}
+\solve{
+    \[
+        \begin{align*}
+            \mathrm{determinant} & = \lambda \begin{vmatrix}
+                                                 \lambda & 3           \\
+                                                 2       & \lambda - 2
+                                             \end{vmatrix} - 0 + 1 \begin{vmatrix}
+                                                                       0 & \lambda \\
+                                                                       2 & 2
+                                                                   \end{vmatrix}
+                                 & = \lambda(\lambda(\lambda - 2) - 6) - 2 \lambda
+                                 & = (\lambda + 2 )\lambda (\lambda - 4)
+        \end{align*}
+    \]
+    Therefore, for \( \lambda = - 2, 0, 4 \), the determinant is zero. }
+
+\qs{}{(CH3.2 P124 Q30) Use elementary row or column operations to find the determinant.
+    \[
+        \begin{vmatrix}
+            3 & 8   & - 7 \\
+            0 & - 5 & 4\, \\
+            6 & 1\, & - 6 \\
+        \end{vmatrix}
+    \]
+}
+\solve{
+    \[
+        \begin{align*}
+            \begin{vmatrix}
+                3 & 8   & - 7 \\
+                0 & - 5 & 4\, \\
+                6 & 1\, & - 6 \\
+            \end{vmatrix} & = \begin{vmatrix}
+                                  3 & 8    & - 7 \\
+                                  0 & - 5  & 4\, \\
+                                  0 & - 15 & 8
+                              \end{vmatrix}
+                             & = \begin{vmatrix}
+                                     3 & 8   & - 7 \\
+                                     0 & - 5 & 4\, \\
+                                     0 & 0   & - 8
+                                 \end{vmatrix}
+                             & = 3 \cdot (- 5) \cdot (- 8)
+                             & = 120.
+        \end{align*}
+    \]}
+
+\qs{}{(CH3.3 P131 Q10) Use the fact that $ \left| cA \right| = c^n\left| A \right| $ to evaluate the determinant of the $ n \times n $ matrix $ A $.
+    \[
+        A = \begin{vmatrix}
+            4  & 16  & 0\, \\
+            12 & - 8 & 8   \\
+            16 & 20  & - 4
+        \end{vmatrix}
+    \]
+}
+\solve{\[
+        \begin{align*}
+            \left| A \right|                                 & = 4^3 \left|
+            \begin{vmatrix}
+                1 & 4   & 0   \\
+                3 & - 2 & 2   \\
+                4 & 5   & - 1
+            \end{vmatrix}
+            \right|                                          & =
+            64 \cdot \left( 1 \cdot \begin{vmatrix}
+                                        - 2 & 2   \\
+                                        5   & - 1
+                                    \end{vmatrix} - 4 \cdot \begin{vmatrix}
+                                                                3 & 2   \\
+                                                                4 & - 1
+                                                            \end{vmatrix} \right)          & =
+            64 \cdot ( 1 \cdot (2 - 10) - 4 \cdot (- 3 - 8)) & =
+            64 \cdot 36                                      & = 2304.
+        \end{align*}
+    \]
+}
+
+\qs{}{(CH3.3 P132 Q48) Find
+    \begin{enumerate}[label=(\alph*)]
+        \item \( \left| A^T \right| \)
+        \item \( \left| A^{2} \right| \)
+        \item \( \left| AA^{T} \right| \)
+        \item \( \left| 2A \right| \)
+        \item \( \left| A^{- 1} \right| \)
+    \end{enumerate}
+    for the matrix $ A $.
+    \[
+        A = \begin{vmatrix}
+            4   & 1 & 9\, \\
+            - 1 & 0 & - 2 \\
+            - 3 & 3 & 0
+        \end{vmatrix}
+    \]
+}
+\solve{\begin{enumerate}[label=(\alph*)]
+        \item \[
+                  \begin{align*}
+                      \left| A^T \right| = \left| A \right|
+                       & = 1 \cdot \begin{vmatrix}
+                                       1 & 9 \\
+                                       3 & 0
+                                   \end{vmatrix} + 0 + 2 \cdot \begin{vmatrix}
+                                                                   4\, & 1 \\
+                                                                   - 3 & 3
+                                                               \end{vmatrix}
+                       & = - 27 + 30 = 3.
+                  \end{align*}
+              \]
+        \item \[
+                  \begin{align*}
+                      \left| A^2 \right| = \left| A \right|^2
+                       & = 3^2 = 9.
+                  \end{align*}
+              \]
+        \item \[
+                  \begin{align*}
+                      \left| AA^T \right| = \left| A \right| \cdot \left| A^T \right|
+                       & = 3 \cdot 3 = 9.
+                  \end{align*}
+              \]
+        \item \[
+                  \begin{align*}
+                      \left| 2A \right| = 2^3 \cdot \left| A \right|
+                       & = 8 \cdot 3 = 24.
+                  \end{align*}
+              \]
+        \item \[
+                  \begin{align*}
+                      \left| A^{- 1} \right| = \frac{1}{\left| A \right|}
+                       & = \frac{1}{3}.
+                  \end{align*}
+              \]
+    \end{enumerate}}
+
+\qs{}{(CH3.4 P142 Q8) Find the adjoint of the matrix $ A $. Then use the adjoint to find the inverse of $ A $ (if possible)).
+    \[
+        A = \begin{bmatrix}
+            1 & 1 & 1 & 0 \\
+            1 & 1 & 0 & 1 \\
+            1 & 0 & 1 & 1 \\
+            0 & 1 & 1 & 1
+        \end{bmatrix}
+    \]
+}
+\solve{\begin{enumerate}
+        \item \[
+                  \begin{align*}
+                      \mathrm{adj}(A) & = \begin{bmatrix}
+                                              - 1 & - 1 & - 1 & 2   \\
+                                              - 1 & - 1 & 2   & - 1 \\
+                                              - 1 & 2   & - 1 & - 1 \\
+                                              2   & - 1 & - 1 & - 1
+                                          \end{bmatrix}.
+                  \end{align*}
+              \]
+        \item By \( A^{- 1} = \frac{1}{\det(A)} \cdot \mathrm{adj}(A) \), we have \[
+                  A^{-1} = \frac{1}{ - 3} \begin{bmatrix}
+                      - 1 & - 1 & - 1 & 2   \\
+                      - 1 & - 1 & 2   & - 1 \\
+                      - 1 & 2   & - 1 & - 1 \\
+                      2   & - 1 & - 1 & - 1
+                  \end{bmatrix} = \begin{bmatrix}
+                      \frac{1}{3}   & \frac{1}{3}   & \frac{1}{3}   & - \frac{2}{3} \\
+                      \frac{1}{3}   & \frac{1}{3}   & - \frac{2}{3} & \frac{1}{3}   \\
+                      \frac{1}{3}   & - \frac{2}{3} & \frac{1}{3}   & \frac{1}{3}   \\
+                      - \frac{2}{3} & \frac{1}{3}   & \frac{1}{3}   & \frac{1}{3}
+                  \end{bmatrix}.
+              \]
+    \end{enumerate}}
+
+\qs{}{(CH3.4 P142 Q18) Use Cramer's Rule to solve (if possible) the system of equations.
+    \[
+        \begin{aligned}
+            4x - 2y + 3z & = - 2  \\
+            2x + 2y + 5z & = 16\, \\
+            8x - 5y - 2z & = 4
+        \end{aligned}
+    \]
+}
+\solve{
+    \begin{enumerate}
+        \item Solve for $ \Delta $ \[
+                  \begin{align*}
+                      \Delta & = \begin{vmatrix}
+                                     4 & - 2 & 3   \\
+                                     2 & 2   & 5   \\
+                                     8 & - 5 & - 2
+                                 \end{vmatrix}
+                             & = 4 \begin{vmatrix}
+                                       2   & 5   \\
+                                       - 5 & - 2
+                                   \end{vmatrix} + 2 \begin{vmatrix}
+                                                         2 & 5   \\
+                                                         8 & - 2
+                                                     \end{vmatrix} + 3 \begin{vmatrix}
+                                                                           2 & 2   \\
+                                                                           8 & - 5
+                                                                       \end{vmatrix} & = 4( -4 + 25) + 2(- 4 - 40) + 3(- 10 - 16) & = - 82.
+                  \end{align*}
+              \]
+        \item Solve for $ \Delta_x $ to find $ x $ \[
+                  \begin{align*}
+                      \Delta_x & = \begin{vmatrix}
+                                       - 2 & - 2 & 5   \\
+                                       16  & 2   & 5   \\
+                                       4   & - 5 & - 2
+                                   \end{vmatrix}                                         \\
+                               & = - 2 \begin{vmatrix}
+                                           2   & 5   \\
+                                           - 5 & - 2
+                                       \end{vmatrix} + 2 \begin{vmatrix}
+                                                             16 & 5   \\
+                                                             4  & - 2
+                                                         \end{vmatrix} + 5 \begin{vmatrix}
+                                                                               16 & 2   \\
+                                                                               4  & - 5
+                                                                           \end{vmatrix}\, \\
+                               & = - 2( - 4 + 25) + 2( - 32 - 20) + 5( - 80 - 8) & = - 586
+                  \end{align*}
+              \]
+              Therefore, $ x = \frac{\Delta_x}{\Delta} = \frac{- 586}{- 82} = \frac{293}{41}
+              $.
+
+        \item Solve for $ \Delta_y $ to find $ y $ \[
+                  \begin{align*}
+                      \Delta_y & = \begin{vmatrix}
+                                       4 & - 2 & 3   \\
+                                       2 & 16  & 5   \\
+                                       8 & 4   & - 2
+                                   \end{vmatrix}                                       \\
+                               & = 4 \begin{vmatrix}
+                                         16 & 5   \\
+                                         4  & - 2
+                                     \end{vmatrix} + 2 \begin{vmatrix}
+                                                           2 & 5   \\
+                                                           8 & - 2
+                                                       \end{vmatrix} + 3 \begin{vmatrix}
+                                                                             2 & 16 \\
+                                                                             8 & 4
+                                                                         \end{vmatrix} \\
+                               & = 4( - 32 - 20) + 2( - 4 - 40) + 3(8 - 128) & = - 656
+                  \end{align*}
+              \]
+              Therefore, $ y = \frac{\Delta_y}{\Delta} = \frac{- 656}{- 82} = 8 $.
+
+        \item Solve for $ \Delta_z $ to find $ z $ \[
+                  \begin{align*}
+                      \Delta_z & = \begin{vmatrix}
+                                       4 & - 2 & - 2 \\
+                                       2 & 2   & 16  \\
+                                       8 & - 5 & 4
+                                   \end{vmatrix}                                       \\
+                               & = 4 \begin{vmatrix}
+                                         2   & 16 \\
+                                         - 5 & 4
+                                     \end{vmatrix} + 2 \begin{vmatrix}
+                                                           4 & 16 \\
+                                                           8 & 4
+                                                       \end{vmatrix} - 2 \begin{vmatrix}
+                                                                             2 & 2   \\
+                                                                             8 & - 5
+                                                                         \end{vmatrix} \\
+                               & = 4(8 + 80) + 2(16 - 128) - 2( - 10 - 16) & = 180
+                  \end{align*}
+              \]
+              Therefore, $ z = \frac{\Delta_z}{\Delta} = \frac{180}{- 82} = - \frac{90}{41}
+              $.
+    \end{enumerate}}
+
+\qs{}{(CH3.4 P142 Q36) Determine whether the points are collinear.
+    \[
+        ( - 1, - 3), ( - 4, 7), (2, - 13)
+    \]
+}
+\solve{
+    \[
+        \begin{align*}
+            \begin{vmatrix}
+                - 1 & - 3  & 1 \\
+                - 4 & 7    & 1 \\
+                2   & - 13 & 1
+            \end{vmatrix} & = \begin{vmatrix}
+                                  - 1 & - 3  & 1   \\
+                                  0   & 19   & - 3 \\
+                                  0   & - 19 & 3
+                              \end{vmatrix} & = 0.
+        \end{align*}
+    \]
+    Since the determinant is zero, the points are collinear. }
+
+\qs{}{(CH3.4 P142 Q48) Determine whether the points are coplanar.
+    \[
+        (1, 2,3), ( - 1, 0,1), (0, - 2, - 5), (2,6,11)
+    \]
+}
+\solve{
+    \[
+        \begin{align*}
+            \begin{vmatrix}
+                1   & 2   & 3   & 1 \\
+                - 1 & 0   & 1   & 1 \\
+                0\, & - 2 & - 5 & 1 \\
+                2   & 6   & 11  & 1
+            \end{vmatrix} & = \begin{vmatrix}
+                                  1   & 2   & 3   & 1   \\
+                                  0   & 2\,  & 4   & 2   \\
+                                  0\, & - 2 & - 5 & 1   \\
+                                  0\, & 2   & 5   & - 1
+                              \end{vmatrix} & = 0.
+        \end{align*}
+    \]
+    Since the determinant is zero, the points are coplanar. }
+
+\qs{}{(CH4.2 P166 Q24) Determine whether the set \[
+        V = \left\{ \left.\left( x, \frac{1}{2}x \right)\, \right| x \text{ is a real number}\right\}
+    \] together with the standard operations, is a vector space. If it is not,
+    identify at least one of the ten vector space axioms that fails. 
+} 
+\solve{
+    Let's exaimine the ten vector space axioms.
+    \begin{enumerate}
+        \item \( \forall\,  \bmu, \bmv \in V,\, \bmu + \bmv \in V \) \\
+              Let \( \bmu = \left( x, \frac{1}{2}x \right) \) and \( \bmv = \left( y, \frac{1}{2}y \right) \in V. \) \\
+              Then \( \bmu + \bmv = \left( x + y, \frac{1}{2}x + \frac{1}{2}y \right) \in V. \)
+        \item \( \forall\,  \bmu, \bmv \in V,\, \bmu + \bmv = \bmv + \bmu \) \\
+              Let \( \bmu = \left( x, \frac{1}{2}x \right) \) and \( \bmv = \left( y, \frac{1}{2}y \right) \in V. \) \\
+              Then \( \bmu + \bmv = \left( x + y, \frac{1}{2}x + \frac{1}{2}y \right) = \left( y + x, \frac{1}{2}y + \frac{1}{2}x \right) = \bmv + \bmu. \)
+        \item \( \forall\,  \bmu, \bmv, \bmw \in V,\, \bmu + (\bmv + \bmw) = (\bmu + \bmv) + \bmw \) \\
+              Let \( \bmu = \left( x, \frac{1}{2}x \right), \bmv = \left( y, \frac{1}{2}y \right), \bmw = \left( z, \frac{1}{2}z \right) \in V. \) \\
+              Then \( \bmu + (\bmv + \bmw) = \left( x, \frac{1}{2}x \right) + \left( y + z, \frac{1}{2}y + \frac{1}{2}z \right) = \left( x + y + z, \frac{1}{2}x + \frac{1}{2}y + \frac{1}{2}z \right) \) \\
+              and \( (\bmu + \bmv) + \bmw = \left( x + y, \frac{1}{2}x + \frac{1}{2}y \right) + \left( z, \frac{1}{2}z \right) = \left( x + y + z, \frac{1}{2}x + \frac{1}{2}y + \frac{1}{2}z \right). \)
+        \item \( \exists\,\boldsymbol{0}  \in V,\, \text{s.t. } \forall\,  \bmu \in V,\, \bmu + \boldsymbol{0} = \bmu \) \\
+                Let \( \bmu = \left( x, \frac{1}{2}x \right) \text{ and } \boldsymbol{0} = \left( 0, 0 \right) \in V \) \\
+                Then \( \bmu + \boldsymbol{0} = \left( x, \frac{1}{2}x \right) + \left( 0, 0 \right) = \left( x, \frac{1}{2}x \right) = \bmu. \)
+        \item \( \forall\,  \bmu \in V,\, \exists\, - \bmu \in V,\, \text{s.t. } \bmu + ( - \bmu) = \boldsymbol{0} \) \\
+                Let \( \bmu = \left( x, \frac{1}{2}x \right) \in V \) \\
+                Then \( - \bmu = \left( - x, - \frac{1}{2}x \right) \in V \) \\
+                And \( \bmu + ( - \bmu) = \left( x, \frac{1}{2}x \right) + \left( - x, - \frac{1}{2}x \right) = \left( 0, 0 \right) = \boldsymbol{0}. \)
+        \item \( \forall\, \bmu \in V,\, \forall\, c \in \bbR ,\, c \cdot \bmu \in V \) \\
+                Let \( \bmu = \left( x, \frac{1}{2}x \right) \in V \) and \( c \in \bbR \) \\
+                Then \( c \cdot \bmu = c \cdot \left( x, \frac{1}{2}x \right) = \left( c \cdot x, c \cdot \frac{1}{2}x \right) \in V. \)
+        \item \( \forall\, \bmu, \bmv \in V,\, c \in \bbR ,\, c \cdot (\bmu + \bmv) = c \cdot \bmu + c \cdot \bmv \) \\
+                Let \( \bmu = \left( x, \frac{1}{2}x \right), \bmv = \left( y, \frac{1}{2}y \right) \in V \) and \( c \in \bbR \) \\
+                Then \( c \cdot (\bmu + \bmv) = c \cdot \left( x + y, \frac{1}{2}x + \frac{1}{2}y \right) = \left( c \cdot (x + y), c \cdot \frac{1}{2}x + c \cdot \frac{1}{2}y \right) \) \\
+                and \( c \cdot \bmu + c \cdot \bmv = \left( c \cdot x, c \cdot \frac{1}{2}x \right) + \left( c \cdot y, c \cdot \frac{1}{2}y \right) = \left( c \cdot (x + y), c \cdot \frac{1}{2}x + c \cdot \frac{1}{2}y \right). \)
+        \item \( \forall\, \bmu \in V,\, \forall\, c, d \in \bbR ,\, (c + d) \cdot \bmu = c \cdot \bmu + d \cdot \bmu \) \\
+                Let \( \bmu = \left( x, \frac{1}{2}x \right) \in V \) and \( c, d \in \bbR \) \\
+                Then \( (c + d) \cdot \bmu = (c + d) \cdot \left( x, \frac{1}{2}x \right) = \left( (c + d) \cdot x, (c + d) \cdot \frac{1}{2}x \right) \) \\
+                and \( c \cdot \bmu + d \cdot \bmu = \left( c \cdot x, c \cdot \frac{1}{2}x \right) + \left( d \cdot x, d \cdot \frac{1}{2}x \right) = \left( (c + d) \cdot x, (c + d) \cdot \frac{1}{2}x \right). \)
+        \item \( \forall\, \bmu \in V,\, \forall\, c, d \in  \bbR,\, c(d\bmu) = (cd) \bmu \) \\
+                Let \( \bmu = \left( x, \frac{1}{2}x \right) \in V \) and \( c, d \in \bbR \) \\
+                Then \( c(d\bmu) = c(d \cdot \left( x, \frac{1}{2}x \right)) = c \cdot \left( d \cdot x, d \cdot \frac{1}{2}x \right) = \left( c \cdot d \cdot x, c \cdot d \cdot \frac{1}{2}x \right) \) \\
+                and \( (cd) \bmu = (cd) \cdot \left( x, \frac{1}{2}x \right) = \left( cd \cdot x, cd \cdot \frac{1}{2}x \right). \)
+        \item \( \forall\, \bmu \in V,\, 1 \cdot \bmu = \bmu \) \\
+                Let \( \bmu = \left( x, \frac{1}{2}x \right) \in V \) \\
+                Then \( 1 \cdot \bmu = 1 \cdot \left( x, \frac{1}{2}x \right) = \left( 1 \cdot x, 1 \cdot \frac{1}{2}x \right) = \left( x, \frac{1}{2}x \right) = \bmu. \)
+    \end{enumerate}
+    Since all the ten vector space axioms hold, the set \( V \) together with the standard operations is a vector space. 
+}
+
+\qs{}{(CH4.2 P166 Q26) Determine whether the set \[
+    V = \left\{ \left.\begin{bmatrix}
+        a & b \\
+        c & 0 
+    \end{bmatrix}\, \right| a, b, c \in F \right\}
+\] together with the standard operations, is a vector space. If it is not,
+identify at least one of the ten vector space axioms that fails. 
+}
+\solve{
+    Let's exaimine the ten vector space axioms.
+    For the ease of discussion, assume \( A = \begin{bmatrix}
+        a & b \\
+        c & 0
+    \end{bmatrix} \) and \( B = \begin{bmatrix}
+        x & y \\
+        z & 0
+    \end{bmatrix} \) and \( C = \begin{bmatrix}
+        m & n \\
+        p & 0
+    \end{bmatrix} \) are arbitrary elements in \( V \).
+    And \( c, d\) are arbitrary elements in \( \bbR \).
+    \begin{enumerate}
+        \item \( A + B \in V \) \\
+              \( A + B = \begin{bmatrix}
+                  a + x & b + y \\
+                  c + z & 0
+              \end{bmatrix} \in V. \)
+        \item \( A + B = B + A \) \\
+                
+                \( A + B = \begin{bmatrix}
+                    a + x & b + y \\
+                    c + z & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    x + a & y + b \\
+                    z + c & 0
+                \end{bmatrix} = B + A. \)
+        \item \( A + (B + C) = (A + B) + C \) \\
+                \( A + (B + C) = \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    x + m & y + n \\
+                    z + p & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    a + x + m & b + y + n \\
+                    c + z + p & 0
+                \end{bmatrix} \) \\
+                and \( (A + B) + C = \begin{bmatrix}
+                    a + x & b + y \\
+                    c + z & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    m & n \\
+                    p & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    a + x + m & b + y + n \\
+                    c + z + p & 0
+                \end{bmatrix}. \) 
+        \item \( \exists\, \boldsymbol{0} \in V,\, \text{s.t. } \forall\, A \in V,\, A + \boldsymbol{0} = A \) \\
+                Let \( \boldsymbol{0} = \begin{bmatrix}
+                    0 & 0 \\
+                    0 & 0
+                \end{bmatrix} \in V \) \\
+                Then \( A + \boldsymbol{0} = \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    0 & 0 \\
+                    0 & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} = A. \)
+        \item \( \forall\, A \in V,\, \exists\, - A \in V,\, \text{s.t. } A + ( - A) = \boldsymbol{0} \) \\
+                Let \( - A = \begin{bmatrix}
+                    - a & - b \\
+                    - c & 0
+                \end{bmatrix} \in V \) \\
+                Then \( A + ( - A) = \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    - a & - b \\
+                    - c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & 0 \\
+                    0 & 0
+                \end{bmatrix} = \boldsymbol{0}. \)
+        \item \( c \cdot A \in V \) \\
+                \( c \cdot A = \begin{bmatrix}
+                    c \cdot a & c \cdot b \\
+                    c \cdot c & 0
+                \end{bmatrix} \in V. \)
+        \item \( c \cdot (A + B) = c \cdot A + c \cdot B \) \\
+                \( c \cdot (A + B) = c \cdot \begin{bmatrix}
+                    a + x & b + y \\
+                    c + z & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    c \cdot (a + x) & c \cdot (b + y) \\
+                    c \cdot (c + z) & 0
+                \end{bmatrix} \) \\
+                and \( c \cdot A + c \cdot B = \begin{bmatrix}
+                    c \cdot a & c \cdot b \\
+                    c \cdot c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    c \cdot x & c \cdot y \\
+                    c \cdot z & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    c \cdot (a + x) & c \cdot (b + y) \\
+                    c \cdot (c + z) & 0
+                \end{bmatrix}. \)
+        \item \( (c + d) \cdot A = c \cdot A + d \cdot A \) \\
+                \( (c + d) \cdot A = (c + d) \cdot \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    (c + d) \cdot a & (c + d) \cdot b \\
+                    (c + d) \cdot c & 0
+                \end{bmatrix} \) \\
+                and \( c \cdot A + d \cdot A = \begin{bmatrix}
+                    c \cdot a & c \cdot b \\
+                    c \cdot c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    d \cdot a & d \cdot b \\
+                    d \cdot c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    (c + d) \cdot a & (c + d) \cdot b \\
+                    (c + d) \cdot c & 0
+                \end{bmatrix}. \)
+        \item \( c \cdot (d \cdot A) = (cd) \cdot A \) \\
+                \( c \cdot (d \cdot A) = c \cdot \begin{bmatrix}
+                    d \cdot a & d \cdot b \\
+                    d \cdot c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    c \cdot (d \cdot a) & c \cdot (d \cdot b) \\
+                    c \cdot (d \cdot c) & 0
+                \end{bmatrix} \) \\
+                and \( (cd) \cdot A = (cd) \cdot \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    (cd) \cdot a & (cd) \cdot b \\
+                    (cd) \cdot c & 0
+                \end{bmatrix}. \)
+        \item \( 1 \cdot A = A \) \\
+                \( 1 \cdot A = 1 \cdot \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    1 \cdot a & 1 \cdot b \\
+                    1 \cdot c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    a & b \\
+                    c & 0
+                \end{bmatrix} = A. \)   
+    \end{enumerate}
+    Since all the ten vector space axioms hold, the set \( V \) together with the standard operations is a vector space.
+}
+
+\qs{}{(CH4.2 P166 Q30) Determine whether the set \[
+    V = \left\{ \left.\begin{bmatrix}
+        0 & a & b & c \\
+        a & 0 & b & c \\
+        a & b & 0 & c \\
+        a & b & c & 0
+    \end{bmatrix}\, \right| a, b, c \in F \right\}
+\] together with the standard operations, is a vector space. If it is not,
+identify at least one of the ten vector space axioms that fails. 
+}
+\solve{
+    Let's exaimine the ten vector space axioms.
+    For the ease of discussion, assume \( A = \begin{bmatrix}
+        0 & a & b & c \\
+        a & 0 & b & c \\
+        a & b & 0 & c \\
+        a & b & c & 0
+    \end{bmatrix} \) and \( B = \begin{bmatrix}
+        0 & x & y & z \\
+        x & 0 & y & z \\
+        x & y & 0 & z \\
+        x & y & z & 0
+    \end{bmatrix} \) and \( C = \begin{bmatrix}
+        0 & m & n & p \\
+        m & 0 & n & p \\
+        m & n & 0 & p \\
+        m & n & p & 0
+    \end{bmatrix} \) are arbitrary elements in \( V \).
+    And \( c, d\) are arbitrary elements in \( \bbR \).
+    \begin{enumerate}
+        \item \( A + B \in V \) \\
+              \( A + B = \begin{bmatrix}
+                  0 & a + x & b + y & c + z \\
+                  a + x & 0 & b + y & c + z \\
+                  a + x & b + y & 0 & c + z \\
+                  a + x & b + y & c + z & 0
+              \end{bmatrix} \in V. \)
+
+        \item \( A + B = B + A \) \\
+                \( 
+                    A + B & = \begin{bmatrix}
+                        0 & a & b & c \\
+                        a & 0 & b & c \\
+                        a & b & 0 & c \\
+                        a & b & c & 0
+                    \end{bmatrix} + \begin{bmatrix}
+                        0 & x & y & z \\
+                        x & 0 & y & z \\
+                        x & y & 0 & z \\
+                        x & y & z & 0
+                    \end{bmatrix} \\
+                    = \begin{bmatrix}
+                        0 & a + x & b + y & c + z \\
+                        a + x & 0 & b + y & c + z \\
+                        a + x & b + y & 0 & c + z \\
+                        a + x & b + y & c + z & 0
+                    \end{bmatrix} = \begin{bmatrix}
+                        0 & x + a & y + b & z + c \\
+                        x + a & 0 & y + b & z + c \\
+                        x + a & y + b & 0 & z + c \\
+                        x + a & y + b & z + c & 0
+                    \end{bmatrix} = B + A.
+                
+                \)
+
+        \item \( A + (B + C) = (A + B) + C \) \\
+                \( \begin{aligned} A + (B + C) &= \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    0 & x + m & y + n & z + p \\
+                    x + m & 0 & y + n & z + p \\
+                    x + m & y + n & 0 & z + p \\
+                    x + m & y + n & z + p & 0
+                \end{bmatrix} \\
+                &= \begin{bmatrix}
+                    0 & a + x + m & b + y + n & c + z + p \\
+                    a + x + m & 0 & b + y + n & c + z + p \\
+                    a + x + m & b + y + n & 0 & c + z + p \\
+                    a + x + m & b + y + n & c + z + p & 0
+                \end{bmatrix} 
+            \end{aligned}\) \\
+                \( \begin{aligned} \text{and } (A + B) + C &= \begin{bmatrix}
+                    0 & a + x & b + y & c + z \\
+                    a + x & 0 & b + y & c + z \\
+                    a + x & b + y & 0 & c + z \\
+                    a + x & b + y & c + z & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    0 & m & n & p \\
+                    m & 0 & n & p \\
+                    m & n & 0 & p \\
+                    m & n & p & 0
+                \end{bmatrix} \\
+                &= \begin{bmatrix}
+                    0 & a + x + m & b + y + n & c + z + p \\
+                    a + x + m & 0 & b + y + n & c + z + p \\
+                    a + x + m & b + y + n & 0 & c + z + p \\
+                    a + x + m & b + y + n & c + z + p & 0
+                \end{bmatrix}. 
+            \end{aligned} \)
+        \item \( \exists\, \boldsymbol{0} \in V,\, \text{s.t. } \forall\, A \in V,\, A + \boldsymbol{0} = A \) \\
+                Let \( \boldsymbol{0} = \begin{bmatrix}
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0
+                \end{bmatrix} \in V \) \\
+                Then \( A + \boldsymbol{0} = \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} = A. \)
+        \item \( \forall\, A \in V,\, \exists\, - A \in V,\, \text{s.t. } A + ( - A) = \boldsymbol{0} \) \\
+                Let \( - A = \begin{bmatrix}
+                    0 & - a & - b & - c \\
+                    - a & 0 & - b & - c \\
+                    - a & - b & 0 & - c \\
+                    - a & - b & - c & 0
+                \end{bmatrix} \in V \) \\
+                Then \( A + ( - A) = \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    0 & - a & - b & - c \\
+                    - a & 0 & - b & - c \\
+                    - a & - b & 0 & - c \\
+                    - a & - b & - c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0
+                \end{bmatrix} = \boldsymbol{0}. \)
+        \item \( c \cdot A \in V \) \\
+                \( c \cdot A = \begin{bmatrix}
+                    0 & c \cdot a & c \cdot b & c \cdot c \\
+                    c \cdot a & 0 & c \cdot b & c \cdot c \\
+                    c \cdot a & c \cdot b & 0 & c \cdot c \\
+                    c \cdot a & c \cdot b & c \cdot c & 0
+                \end{bmatrix} \in V. \)
+        \item \( c \cdot (A + B) = c \cdot A + c \cdot B \) \\
+                \( c \cdot (A + B) = c \cdot \begin{bmatrix}
+                    0 & a + x & b + y & c + z \\
+                    a + x & 0 & b + y & c + z \\
+                    a + x & b + y & 0 & c + z \\
+                    a + x & b + y & c + z & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & c \cdot (a + x) & c \cdot (b + y) & c \cdot (c + z) \\
+                    c \cdot (a + x) & 0 & c \cdot (b + y) & c \cdot (c + z) \\
+                    c \cdot (a + x) & c \cdot (b + y) & 0 & c \cdot (c + z) \\
+                    c \cdot (a + x) & c \cdot (b + y) & c \cdot (c + z) & 0
+                \end{bmatrix} \) \\
+                \( \begin{aligned} \text{and }c \cdot A + c \cdot B &= \begin{bmatrix}
+                    0 & c \cdot a & c \cdot b & c \cdot c \\
+                    c \cdot a & 0 & c \cdot b & c \cdot c \\
+                    c \cdot a & c \cdot b & 0 & c \cdot c \\
+                    c \cdot a & c \cdot b & c \cdot c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    0 & c \cdot x & c \cdot y & c \cdot z \\
+                    c \cdot x & 0 & c \cdot y & c \cdot z \\
+                    c \cdot x & c \cdot y & 0 & c \cdot z \\
+                    c \cdot x & c \cdot y & c \cdot z & 0
+                \end{bmatrix} \\
+                &= \begin{bmatrix}
+                    0 & c \cdot (a + x) & c \cdot (b + y) & c \cdot (c + z) \\
+                    c \cdot (a + x) & 0 & c \cdot (b + y) & c \cdot (c + z) \\
+                    c \cdot (a + x) & c \cdot (b + y) & 0 & c \cdot (c + z) \\
+                    c \cdot (a + x) & c \cdot (b + y) & c \cdot (c + z) & 0
+                \end{bmatrix}. 
+            \end{aligned} \)
+        \item \( (c + d) \cdot A = c \cdot A + d \cdot A \) \\
+                \( (c + d) \cdot A = (c + d) \cdot \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & (c + d) \cdot a & (c + d) \cdot b & (c + d) \cdot c \\
+                    (c + d) \cdot a & 0 & (c + d) \cdot b & (c + d) \cdot c \\
+                    (c + d) \cdot a & (c + d) \cdot b & 0 & (c + d) \cdot c \\
+                    (c + d) \cdot a & (c + d) \cdot b & (c + d) \cdot c & 0
+                \end{bmatrix} \) \\
+                \( \begin{aligned} \text{and } 
+                c \cdot A + d \cdot A &= \begin{bmatrix}
+                    0 & c \cdot a & c \cdot b & c \cdot c \\
+                    c \cdot a & 0 & c \cdot b & c \cdot c \\
+                    c \cdot a & c \cdot b & 0 & c \cdot c \\
+                    c \cdot a & c \cdot b & c \cdot c & 0
+                \end{bmatrix} + \begin{bmatrix}
+                    0 & d \cdot a & d \cdot b & d \cdot c \\
+                    d \cdot a & 0 & d \cdot b & d \cdot c \\
+                    d \cdot a & d \cdot b & 0 & d \cdot c \\
+                    d \cdot a & d \cdot b & d \cdot c & 0
+                \end{bmatrix} \\
+                &= \begin{bmatrix}
+                    0 & (c + d) \cdot a & (c + d) \cdot b & (c + d) \cdot c \\
+                    (c + d) \cdot a & 0 & (c + d) \cdot b & (c + d) \cdot c \\
+                    (c + d) \cdot a & (c + d) \cdot b & 0 & (c + d) \cdot c \\
+                    (c + d) \cdot a & (c + d) \cdot b & (c + d) \cdot c & 0
+                \end{bmatrix}. 
+            \end{aligned} \)
+        \item \( c \cdot (d \cdot A) = (cd) \cdot A \) \\
+                \( c \cdot (d \cdot A) = c \cdot \begin{bmatrix}
+                    0 & d \cdot a & d \cdot b & d \cdot c \\
+                    d \cdot a & 0 & d \cdot b & d \cdot c \\
+                    d \cdot a & d \cdot b & 0 & d \cdot c \\
+                    d \cdot a & d \cdot b & d \cdot c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & c \cdot (d \cdot a) & c \cdot (d \cdot b) & c \cdot (d \cdot c) \\
+                    c \cdot (d \cdot a) & 0 & c \cdot (d \cdot b) & c \cdot (d \cdot c) \\
+                    c \cdot (d \cdot a) & c \cdot (d \cdot b) & 0 & c \cdot (d \cdot c) \\
+                    c \cdot (d \cdot a) & c \cdot (d \cdot b) & c \cdot (d \cdot c) & 0
+                \end{bmatrix} \) \\
+                and \( (cd) \cdot A = (cd) \cdot \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & (cd) \cdot a & (cd) \cdot b & (cd) \cdot c \\
+                    (cd) \cdot a & 0 & (cd) \cdot b & (cd) \cdot c \\
+                    (cd) \cdot a & (cd) \cdot b & 0 & (cd) \cdot c \\
+                    (cd) \cdot a & (cd) \cdot b & (cd) \cdot c & 0
+                \end{bmatrix}. \)
+        \item \( 1 \cdot A = A \) \\
+                \( 1 \cdot A = 1 \cdot \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & 1 \cdot a & 1 \cdot b & 1 \cdot c \\
+                    1 \cdot a & 0 & 1 \cdot b & 1 \cdot c \\
+                    1 \cdot a & 1 \cdot b & 0 & 1 \cdot c \\
+                    1 \cdot a & 1 \cdot b & 1 \cdot c & 0
+                \end{bmatrix} = \begin{bmatrix}
+                    0 & a & b & c \\
+                    a & 0 & b & c \\
+                    a & b & 0 & c \\
+                    a & b & c & 0
+                \end{bmatrix} = A. \) 
+    \end{enumerate} 
+    Since all the ten vector space axioms hold, the set \( V \) together with the standard operations is a vector space.
+}
+
+\qs{}{(CH4.3 P173 Q2) Verify that $ W $ is a subspace of $ V $, assume that $ V $ has the standard operations. \[
+    W = \left\{ (x, y, 4x - 5y) \mid x, y \in \bbR \right\} \subseteq \bbR^3 = V.
+\]
+}
+\solve{
+    Let \( \bmu = (x_1, y_1, 4x_1 - 5y_1) \) and \( \bmv = (x_2, y_2, 4x_2 - 5y_2) \) be arbitrary elements in \( W \) and \( c, d \in \bbR \). \\
+    \[ \begin{align*} c \cdot  \bmu + d \cdot \bmv &= c \cdot (x_1, y_1, 4x_1 - 5y_1) + d \cdot (x_2, y_2, 4x_2 - 5y_2) \\
+        &= (c \cdot x_1 + d \cdot x_2, c \cdot y_1 + d \cdot y_2, c \cdot (4x_1 - 5y_1) + d \cdot (4x_2 - 5y_2)) \in V
+    \end{align*}
+    \] \\
+}
+
+\qs{}{(CH4.3 P173 Q4) Verify that $ W $ is a subspace of $ V $, assume that $ V $ has the standard operations. \[
+    W = \left\{ \left. \begin{bmatrix}
+        a & b \\
+        a - 2b & 0 \\
+        0 & c
+    \end{bmatrix}\, \right| a, b, c \in \bbR \right\} \subseteq M_{3 \cdot 2}( \bbR ) = V.
+\]
+}
+\solve{
+    Let \( A = \begin{bmatrix}
+        a_1 & b_1 \\
+        a_1 - 2b_1 & 0 \\
+        0 & c_1
+    \end{bmatrix} \) and \( B = \begin{bmatrix}
+        a_2 & b_2 \\
+        a_2 - 2b_2 & 0 \\
+        0 & c_2
+    \end{bmatrix} \) be arbitrary elements in \( W \) and \( c, d \in \bbR \). \\
+    \[ \begin{align*} c \cdot A + d \cdot B &= c \cdot \begin{bmatrix}
+        a_1 & b_1 \\
+        a_1 - 2b_1 & 0 \\
+        0 & c_1
+    \end{bmatrix} + d \cdot \begin{bmatrix}
+        a_2 & b_2 \\
+        a_2 - 2b_2 & 0 \\
+        0 & c_2
+    \end{bmatrix} \\
+    &= \begin{bmatrix}
+        c \cdot a_1 + d \cdot a_2 & c \cdot b_1 + d \cdot b_2 \\
+        c \cdot (a_1 - 2b_1) + d \cdot (a_2 - 2b_2) & 0 \\
+        0 & c \cdot c_1 + d \cdot c_2
+    \end{bmatrix} \in V
+    \end{align*} \]
+}
+
+\qs{}{(CH4.3 P173 Q32) Determine whether the subset \( W \) of \( M_{n \times n}(F) \) is a subspace of \( M_{n \times n}(F) \) with the standard operations.
+    Justify your answer.\[
+    W \text{ is the set of all } A \in M_{n \times n}(F) \text{ s.t. } AB = BA, \text{ for a given } B \in M_{n \times n}(F).
+\]
+}
+\solve{ \( \forall\, A_1, A_2 \in  W,\, \forall\,  c, d \in F\) \\
+    \begin{enumerate}
+        \item \[ \begin{align*}
+            & A_1 \in W \text{ and } A_2 \in W \\
+            \implies & A_1 B = BA_1 \text{ and } A_2 B = BA_2 \\
+            \implies & (A_1 + A_2)B = A_1B + A_2B = BA_1 + BA_2 = B(A_1 + A_2) \\
+            \implies & A_1 + A_2 \in W
+        \end{align*}
+        \]
+
+        \item \[
+            & (c \cdot A_1)B = c \cdot (A_1B) = c \cdot (BA_1) = B(c \cdot A_1) \\
+            \implies & c \cdot A_1 \in W
+        \]
+    \end{enumerate}
+    Therefore, \( W \) is a subspace of \( M_{n \times n}(F) \) with the standard operations.
+}
+
+\qs{}{(CH4.3 P173 Q38) Determine whether the set \( W \)  is a subspace of \( \RR[3] \) with the standard operations.
+    Justify your answer.\[
+    W = \left\{ (x_1, x_2, 4) \mid x_1, x_2 \in \RR \right\}
+\]
+}
+\solve{ \( W \) is not a subspace of \( \RR[3] \) with the standard operations. \\
+    Let \( \bmu = (1, 2, 4) \in W \) and \( c = -1 \in \RR \). \\
+    Then \( c \cdot \bmu = -1 \cdot (1, 2, 4) = (-1, -2, -4) \notin W \). \\
+    Therefore, \( W \) is not a subspace of \( \RR[3] \) with the standard operations.
+}
+
+\end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.2)  2 MAR 2025 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.2)  24 MAR 2025 21:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/la-hw-nccu/hw/hw1/LA_HW1.tex
-(c:/la-hw-nccu/hw/hw1/LA_HW1.tex
+**c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex
+(c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
 (C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1226,13 +1226,12 @@ File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: UTF8.enc 2021/10/16 4.8.5
 ) (C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/cjk/UTF8\UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
-)
-No file LA_HW1.aux.
-\openout1 = `LA_HW1.aux'.
+) (LA_HW3(1).aux)
+\openout1 = `LA_HW3(1).aux'.
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 17.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 17.
-(C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/newpx\omlnpxmi.fd
+ (C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/newpx\omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
 LaTeX Font Info:    ... okay on input line 17.
@@ -1429,34 +1428,421 @@ File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfT
 {C:/Users/jaosn/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
 ]
-\g__tikzsymbols_savebox_F_0 g 0 G_10.53937_Laughey_1_none_none_box=\box149
 
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.123 }
-        [1
-
-{C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newpx/px-lms.enc}]
-
-c:/la-hw-nccu/hw/hw1/LA_HW1.tex:176: Package amsmath Error: Erroneous nesting of equation structures;
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:71: Package amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.176 }
+l.71     \end{enumerate}}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (3.71126pt too wide) detected at line 71
+[][]
+ []
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:71: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71     \end{enumerate}}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (21.37517pt too wide) detected at line 71
+[][]
+ []
+
+\g__tikzsymbols_savebox_F_0 g 0 G_10.53937_Laughey_1_none_none_box=\box149
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:96: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 ...= - 2, 0, 4 \), the determinant is zero. }
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:127: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127     \]}
+             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.127     \]}
+              [1
+
+{C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newpx/px-lms.enc}]
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:158: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-c:/la-hw-nccu/hw/hw1/LA_HW1.tex:176: Misplaced alignment tab character &.
-<argument> ...end {bmatrix}\\ \] and \[ 2. \quad &
-                                                   R_3 \leftarrow R_3 - 11R_...
-l.176 }
+
+Overfull \hbox (8.41647pt too wide) detected at line 158
+[][]
+ []
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:215: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:215: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:215: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[2]
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:215: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:215: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:251: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.251     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:350: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.350     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (2.23451pt too wide) detected at line 350
+[][]
+ []
+
+
+
+[3]
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:350: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.350     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:350: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.350     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:350: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.350     \end{enumerate}}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:371: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.371 ...nant is zero, the points are collinear. }
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[4]
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:394: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.394 ...inant is zero, the points are coplanar. }
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[5]
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 599--599
+
+ []
+
+
+
+[7]
+Overfull \hbox (0.4036pt too wide) in paragraph at lines 859--859
+[]\OT1/cmr/bx/it/10.53937 Solution:  \OT1/cmr/m/n/10.53937 Let's ex-aimine the ten vec-tor space ax-ioms. For the ease of dis-cus-sion, as-sume $\OML/npxmi/m/it/10.53937 A \U/npxmia/m/it/10.53937 = []$
+ []
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:859: Misplaced alignment tab character &.
+<argument> ...em \( A + B = B + A \) \\ \( A + B &
+                                                   = \begin {bmatrix} 0 & a ...
+l.859 }
+       
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:859: Missing $ inserted.
+<inserted text> 
+                $
+l.859 }
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:859: Missing } inserted.
+<inserted text> 
+                }
+l.859 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:859: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.859 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:859: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.859 }
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+
+[8]
+
+[9]
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 871--871
+
+ []
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:871: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.871 }
+       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 906--906
+
+ []
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:906: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.906 }
+       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 929--929
+
+ []
+
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:929: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.929 }
+       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:929: Misplaced alignment tab character &.
+<argument> ...n W \end {align*} \] \par \item \[ &
+                                                   (c \cdot A_1)B = c \cdot ...
+l.929 }
+       
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+c:/la-hw-nccu/hw/hw3/LA_HW3(1).tex:929: Misplaced alignment tab character &.
+<argument> ...BA_1) = B(c \cdot A_1) \\ \implies &
+                                                   c \cdot A_1 \in W \] \end...
+l.929 }
        
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1467,26 +1853,24 @@ might try typing `S' now just to see what is salvageable.
 
 
 
-[2]
-
-[3] (LA_HW1.aux)
+[12] (LA_HW3(1).aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2022/07/14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 39235 strings out of 473899
- 781225 string characters out of 5726500
- 1264113 words of memory out of 5000000
- 61323 multiletter control sequences out of 15000+600000
- 599166 words of font info for 147 fonts, out of 8000000 for 9000
+ 39366 strings out of 473899
+ 783305 string characters out of 5726500
+ 1291096 words of memory out of 5000000
+ 61381 multiletter control sequences out of 15000+600000
+ 600289 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,11n,110p,712b,1367s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXBMI.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXMI.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxmiaX.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsym.pfb>
-Output written on LA_HW1.pdf (4 pages, 183052 bytes).
+ 107i,13n,110p,715b,1367s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXBMI.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXMI.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXMI_gnu.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxmiaX.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb>
+Output written on LA_HW3(1).pdf (13 pages, 226601 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
  181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

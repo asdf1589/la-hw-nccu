@@ -1,0 +1,143 @@
+\documentclass{report}
+
+\usepackage{ctex}
+
+\input{../module/preamble}
+\input{../module/macros}
+\input{../module/letterfonts}
+
+\ctexset{
+    today=old
+}
+
+\title{\Huge{Linear Algebra}\\ Assignment 2}
+\author{\Large{110307039\ 財管四\ 黃柏維}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\cleardoublepage
+
+\qs{}{(CH3.1 P116 Q18) Find the determinant of the maxtrix \( A \) using the method of expansion by cofactors.
+    \begin{\begin{enumerate}[label=(\alph*)]
+            \item the third row and
+            \item the first column.
+        \end{enumerate}}, where
+    \[
+        A = \begin{bmatrix}
+            - 3 & 4   & 2   \\
+            6   & 3\,  & 1   \\
+            4   & - 7 & - 8
+        \end{bmatrix}.
+    \]
+}
+\solve{\begin{enumerate}[label=(\alph*)]
+        \item \[
+                  \begin{align*}
+                      \det(A) & = 4 \begin{vmatrix}
+                                        4 & 2 \\
+                                        3 & 1
+                                    \end{vmatrix} + 7 \begin{vmatrix}
+                                                          - 3 & 2 \\
+                                                          6   & 1
+                                                      \end{vmatrix} - 8 \begin{vmatrix}
+                                                                            - 3 & 4 \\
+                                                                            6   & 3
+                                                                        \end{vmatrix}
+                              & = 4(4 - 6) + 7(- 3 - 12) - 8(- 9 - 24)
+                              & = - 8 - 105 + 264
+                              & = 151.
+                  \end{align*}
+              \]
+
+        \item \[
+                  \begin{align*}
+                      \det(A) & = - 3 \begin{vmatrix}
+                                          3   & 1   \\
+                                          - 7 & - 8
+                                      \end{vmatrix} - 6 \begin{vmatrix}
+                                                            4   & 2   \\
+                                                            - 7 & - 8
+                                                        \end{vmatrix} + 4 \begin{vmatrix}
+                                                                              4 & 2 \\
+                                                                              3 & 1
+                                                                          \end{vmatrix}
+                              & = - 3(- 24 + 7) - 6(- 32 + 14) + 4(4 - 6)
+                              & = - 91 + 108 - 8
+                              & = 9.
+                  \end{align*}
+              \]
+    \end{enumerate}}
+
+\qs{}{(CH3.1 P117 Q52) Find the values of \( \lambda \) for which the determinant is zero.
+    \[
+        \begin{vmatrix}
+            \lambda & 0       & 1           \\
+            0       & \lambda & 3\,          \\
+            2       & 2       & \lambda - 2
+        \end{vmatrix}
+    \]
+}
+\solve{
+    \[
+        \begin{align*}
+            \mathrm{determinant} & = \lambda \begin{vmatrix}
+                                                 \lambda & 3           \\
+                                                 2       & \lambda - 2
+                                             \end{vmatrix} - 0 + 1 \begin{vmatrix}
+                                                                       0 & \lambda \\
+                                                                       2 & 2
+                                                                   \end{vmatrix}
+                                 & = \lambda(\lambda(\lambda - 2) - 6) - 2 \lambda
+                                 & = (\lambda + 2 )\lambda (\lambda - 4)
+        \end{align*}
+    \]
+    Therefore, for \( \lambda = - 2, 0, 4 \), the determinant is zero. }
+
+\qs{}{(CH3.2 P124 Q30) Use elementary row or column operations to find the determinant.
+    \[
+        \begin{vmatrix}
+            3 & 8   & - 7 \\
+            0 & - 5 & 4\,  \\
+            6 & 1\,  & - 6 \\
+        \end{vmatrix}
+    \]
+}
+\solve{
+    \[
+        \begin{align*}
+            \begin{vmatrix}
+                3 & 8   & - 7 \\
+                0 & - 5 & 4\,  \\
+                6 & 1\,  & - 6 \\
+            \end{vmatrix} & = \begin{vmatrix}
+                                 3 & 8   & - 7 \\
+                                 0 & - 5 & 4\,  \\
+                                 0 & - 15 & 8
+                             \end{vmatrix}
+                             & = \begin{vmatrix}
+                                      3 & 8   & - 7 \\
+                                      0 & - 5 & 4\,  \\
+                                      0 & 0   & - 8
+                                 \end{vmatrix}
+                                & = 3 \cdot (- 5) \cdot (- 8)
+                                & = 120.
+        \end{align*}
+    \]}
+
+\qs{}{(CH3.3 P131 Q10)}
+\qs{}{(CH3.3 P131 Q48)}
+\qs{}{(CH3.4 P142 Q8)}
+\qs{}{(CH3.4 P142 Q18)}
+\qs{}{(CH3.4 P142 Q36)}
+\qs{}{(CH3.4 P142 Q48)}
+\qs{}{(CH4.2 P166 Q24)}
+\qs{}{(CH4.2 P166 Q26)}
+\qs{}{(CH4.2 P166 Q30)}
+\qs{}{(CH4.3 P173 Q2)}
+\qs{}{(CH4.3 P173 Q4)}
+\qs{}{(CH4.3 P173 Q32)}
+\qs{}{(CH4.3 P173 Q38)}
+
+\end{document}

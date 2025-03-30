@@ -1,0 +1,456 @@
+\documentclass{report}
+
+\usepackage{ctex}
+
+\input{../module/preamble}
+\input{../module/macros}
+\input{../module/letterfonts}
+
+\ctexset{
+    today=old
+}
+
+\title{\Huge{Linear Algebra}\\ Assignment 4}
+\author{\Large{110307039\ 財管四\ 黃柏維}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\cleardoublepage
+
+\qs{}{(CH4.4 P184 Q6) For the matrices \[
+        A = \begin{bmatrix}
+            2 & - 3 \\
+            4 & 1   \\
+        \end{bmatrix} \text{ and } B = \begin{bmatrix}
+            0 & 5   \\
+            1 & - 2 \\
+        \end{bmatrix}
+    \]
+    in \( M_{2 \times 2} \), determine whether matrix \[
+        C = \begin{bmatrix}
+            6 & 2  \\
+            9 & 11 \\
+        \end{bmatrix}
+    \]
+    is a linear combination of \( A \) and \( B \). }
+
+\solve{ Let \( C = xA + yB \)
+    for some \( x, y \in \mathbb{R} \). Then we have the system of equations:
+    \[
+        \begin{align*}
+                     & x \begin{bmatrix}
+                             2 & -3 \\
+                             4 & 1  \\
+                         \end{bmatrix} + y \begin{bmatrix}
+                                               0 & 5  \\
+                                               1 & -2 \\
+                                           \end{bmatrix} = \begin{bmatrix}
+                                                               6 & 2  \\
+                                                               9 & 11 \\
+                                                           \end{bmatrix} \\[0.5em]
+            \implies & \begin{cases*}
+                           2x + 0y = 6  \\
+                           -3x + 5y = 2 \\
+                           4x + 1y = 9  \\
+                           1x - 2y = 11 \\
+                       \end{cases*}                                      \\
+        \end{align*}
+    \]
+    Because the above system of equations are not consistent, \( C \) is not a
+    linear combination of \( A \) and \( B \). }
+
+\qs{}{(CH4.4 P184 Q18) Determine whether the set \[ S = \{ ( - 1, 2), (2, - 1), (1, 1) \} \] spans \( \RR[2] \). If the set does not span \( \RR[2] \), then give a
+    geometric description of the subspace that it does span. }
+
+\solve{ We first
+    form the matrix \( A \) whose rows are the vectors in \( S \):
+    \[
+        A = \begin{bmatrix}
+            -1 & 2  \\
+            2  & -1 \\
+            1  & 1  \\
+        \end{bmatrix},
+    \]
+    which can be row reduced to
+    \[
+        \begin{bmatrix}
+            1 & 0 \\
+            0 & 1 \\
+            0 & 0 \\
+        \end{bmatrix} \sim A.
+    \]
+    Since the rank of \( A \) is 2, which is equal to the dimension of \( \RR[2]
+    \), we conclude that \( S \) spans \( \RR[2] \). }
+
+\qs{}{(CH4.4 P184 Q26) Determine whether the set \[ S = \{ -2x + x^2, 8x + x^3, - x^2 + x^3, -4 + x^2 \} \] spans \( P_3 \). }
+
+\solve{ We first form the matrix \( A \) whose rows are the
+    coefficients of the vectors in \( S \):
+    \[
+        A = \begin{bmatrix}
+            -2 & 0  & 1 & 0 \\
+            8  & 1  & 0 & 0 \\
+            0  & -1 & 1 & 0 \\
+            -4 & 0  & 1 & 0 \\
+        \end{bmatrix},
+    \]
+    which can be row reduced to
+    \[
+        \begin{bmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 0 \\
+        \end{bmatrix} \sim A.
+    \]
+    \( \because \mathrm{rank}(A) = 3 < \mathrm{rank}(P_3) = 4 \) \\
+    \( \therefore S \) does not span \( P_3 \). \\
+}
+
+\qs{}{(CH4.5 P194 Q56) Determine whether \[ S = \{ \left( \frac{2}{3}, \frac{5}{2}, 1 \right), \left( 1, \frac{3}{2}, 0 \right), (2, 12, 6) \} \]
+    is a basis for \( \RR[3] \). If it is, write \( \bmu = (8,3,8) \) as a linear
+    combination of the vectors in \( S \). }
+
+\solve{ We first form the matrix \( A
+    \) whose rows are the vectors in \( S \):
+    \[
+        A = \begin{bmatrix}
+            \frac{2}{3} & \frac{5}{2} & 1 \\
+            1           & \frac{3}{2} & 0 \\
+            2           & 12          & 6 \\
+        \end{bmatrix},
+    \]
+    which can be row reduced to
+    \[
+        \begin{bmatrix}
+            1 & 0 & - 1         \\
+            0 & 1 & \frac{2}{3} \\
+            0 & 0 & 0           \\
+        \end{bmatrix} \sim A.
+    \]
+    \( \because \mathrm{rank}(A) = 2 < \mathrm{rank}(\RR[3]) = 3 \) \\
+    \( \therefore S \) is not a basis for \( \RR[3] \). \\
+}
+
+\qs{}{(CH4.5 P194 Q68) Find all subsets of the set \[ S = \{ (1, 3, - 2), ( - 4, 1, 1), ( - 2, 7, - 3), (2, 1, 1) \} \] that form a bsis for \( \RR[3] \). }
+
+\solve{ Let the vectors in \( S \) be \(
+    \bmv_1, \bmv_2, \bmv_3, \bmv_4 \) in order. \\ Then we can test whether the
+    matrices \( A_1, A_2, A_3, A_4 \) are rank 3, where \( A_i \) is the matrix
+    whose rows are the vectors in \( S \) excluding \( \bmv_i \):
+    \[
+        \begin{align*}
+            A_1 & = \begin{bmatrix}
+                        -4 & 1 & 1  \\
+                        -2 & 7 & -3 \\
+                        2  & 1 & 1  \\
+                    \end{bmatrix} \sim \begin{bmatrix}
+                                           1 & 0 & 0 \\
+                                           0 & 1 & 0 \\
+                                           0 & 0 & 1 \\
+                                       \end{bmatrix},         \\[0.5em]
+            A_2 & = \begin{bmatrix}
+                        1  & 3 & -2 \\
+                        -2 & 7 & -3 \\
+                        2  & 1 & 1  \\
+                    \end{bmatrix} \sim \begin{bmatrix}
+                                           1 & 0 & 0 \\
+                                           0 & 1 & 0 \\
+                                           0 & 0 & 1 \\
+                                       \end{bmatrix},         \\[0.5em]
+            A_3 & = \begin{bmatrix}
+                        1  & 3 & -2 \\
+                        -4 & 1 & 1  \\
+                        2  & 1 & 1  \\
+                    \end{bmatrix} \sim \begin{bmatrix}
+                                           1 & 0 & 0 \\
+                                           0 & 1 & 0 \\
+                                           0 & 0 & 1 \\
+                                       \end{bmatrix},         \\[0.5em]
+            A_4 & = \begin{bmatrix}
+                        1  & 3 & -2 \\
+                        -4 & 1 & 1  \\
+                        -2 & 7 & -3 \\
+                    \end{bmatrix} \sim \begin{bmatrix}
+                                           1 & 0 & - \frac{5}{13} \\
+                                           0 & 1 & - \frac{7}{13} \\
+                                           0 & 0 & 0              \\
+                                       \end{bmatrix}.
+        \end{align*}
+    \]
+    \( \because \mathrm{rank}(A_1) = \mathrm{rank}(A_2) = \mathrm{rank}(A_3) = 3 = \mathrm{rank}(\RR[3]) \) and \( \mathrm{rank}(A_4) = 2 < \mathrm{rank}(\RR[3]) = 3 \) \\
+    \( \therefore \) The subsets \( \{ \bmv_2, \bmv_3, \bmv_4 \}, \{ \bmv_1, \bmv_3, \bmv_4 \}, \{ \bmv_1, \bmv_2, \bmv_4 \} \) form a basis for \( \RR[3] \). \\
+}
+
+\qs{}{(CH4.5 P194 Q70) Find a basis for \( \RR[3] \) that includes the vectors \( (1, 0, 2) \text{ and } (0, 1, 1) \). }
+
+\solve{
+    We can directly try a standard vector \( \bme_3 = (0, 0, 1) \).
+    \[
+        A \triangleq \begin{bmatrix}
+            1 & 0 & 2 \\
+            0 & 1 & 1 \\
+            0 & 0 & 1 \\
+        \end{bmatrix} \sim \begin{bmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+        \end{bmatrix}.
+    \]
+    \( \therefore S = \{ (1, 0, 2), (0, 1, 1), (0, 0, 1) \} \) is a basis for \( \RR[3] \). \\
+}
+
+\qs{}{(CH4.6 P205 Q14) Find a basis for the subspace of \( \RR[3] \) spanned by \[
+        S = \{ (2, 3, - 1), (1, 3, - 9), (0, 1, 5) \}.
+    \]
+}
+
+\solve{
+    We first form the matrix \( A \) whose rows are the vectors in \( S \):
+    \[
+        A = \begin{bmatrix}
+            2 & 3 & -1 \\
+            1 & 3 & -9 \\
+            0 & 1 & 5  \\
+        \end{bmatrix},
+    \]
+    which can be row reduced to
+    \[
+        \begin{bmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+        \end{bmatrix} \sim A.
+    \]
+    \( \therefore S \) is a basis for the subspace of \( \RR[3] \) spanned by \( S \). \\
+}
+
+\qs{}{(CH4.6 P205 Q20) Find a basis for the subspace of \( \RR[4] \) spanned by \[
+        S = \{ (2, 4, - 3, - 2), ( - 2, - 3, 2, - 5), (1, 3, - 2, 2), ( - 1, - 5, 3, 5) \}.
+    \]}
+
+\solve{
+    We first form the matrix \( A \) whose rows are the vectors in \( S \):
+    \[
+        A = \begin{bmatrix}
+            2  & 4  & -3 & -2 \\
+            -2 & -3 & 2  & -5 \\
+            1  & 3  & -2 & 2  \\
+            -1 & -5 & 3  & 5  \\
+        \end{bmatrix},
+    \]
+    which can be row reduced to
+    \[
+        \begin{bmatrix}
+            1 & 0 & 0 & 3    \\
+            0 & 1 & 0 & - 13 \\
+            0 & 0 & 1 & - 19 \\
+            0 & 0 & 0 & 0    \\
+        \end{bmatrix} \sim A.
+    \]
+    \( \therefore \{ (2, 4, - 3, - 2), ( - 2, - 3, 2, - 5), (1, 3, - 2, 2) \} \) is a basis for the subspace of \( \RR[4] \) spanned by \( S \). \\
+}
+
+\qs{}{(CH4.6 P205 Q38) Find the nullspace of the matrix \[
+        A = \begin{bmatrix}
+            1   & 4   & 2   & 1   \\
+            0   & 1   & 1   & - 1 \\
+            - 2 & - 8 & - 4 & - 2 \\
+        \end{bmatrix}.
+    \]}
+
+\solve{
+    \[
+        A = \begin{bmatrix}
+            1   & 4   & 2   & 1   \\
+            0   & 1   & 1   & - 1 \\
+            - 2 & - 8 & - 4 & - 2 \\
+        \end{bmatrix} \sim \begin{bmatrix}
+            1 & 0 & - 2 & 5   \\
+            0 & 1 & 1   & - 1 \\
+            0 & 0 & 0   & 0   \\
+        \end{bmatrix}.
+    \]
+    The nullspace of \( A \) is therefore spanned by \( S \), where \[ S = \left\{
+        \begin{bmatrix}
+            2  \\
+            -1 \\
+            1  \\
+            0  \\
+        \end{bmatrix},
+        \begin{bmatrix}
+            -5 \\
+            1  \\
+            0  \\
+            1  \\
+        \end{bmatrix}
+        \right\}.
+    \]
+}
+
+\qs{}{(CH4.6 P205 Q40) Find the nullspace of the matrix \[
+        A = \begin{bmatrix}
+            1 & 4   & 2 & 1 \\
+            2 & - 1 & 1 & 1 \\
+            4 & 2   & 1 & 1 \\
+            0 & 4   & 2 & 0
+        \end{bmatrix}.
+    \]}
+
+\solve{
+    \[
+        A = \begin{bmatrix}
+            1 & 4   & 2 & 1 \\
+            2 & - 1 & 1 & 1 \\
+            4 & 2   & 1 & 1 \\
+            0 & 4   & 2 & 0
+        \end{bmatrix} \sim \begin{bmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1 \\
+        \end{bmatrix}.
+    \]
+    The nullspace of \( A \) is therefore spanned by \( S \), where \[ S = \left\{
+        \begin{bmatrix}
+            0 \\
+            0 \\
+            0 \\
+            0 \\
+        \end{bmatrix}
+        \right\}.
+    \]
+}
+
+\qs{}{(CH4.6 P206 Q42) Use the fact that matrices \( A \) and \( B \) are row-equivalent to \begin{enumerate}[label=(\alph*)]
+        \item Find the rank and nullity of \( A \).
+        \item Find a basis for the nullspace of \( A \).
+        \item Find a basis for the row space of \( A \).
+        \item Find a basis for the column space of \( A \).
+        \item Determine whether the rows of \( A \) are linearly independent.
+        \item Let the columns of \( A \) be denoted by \( \bma_1, \bma_2, \bma_3, \bma_4,
+              \text{ and } \bma_5 \). \\ Determine whether each set is linearly independent:
+              \begin{enumerate}[label=(\roman*)]
+                  \item \( \{ \bma_1, \bma_2, \bma_4 \} \)
+                  \item \( \{ \bma_1, \bma_2, \bma_3 \} \)
+                  \item \( \{ \bma_1, \bma_3, \bma_5 \} \)
+              \end{enumerate}
+    \end{enumerate}
+    ,where \[
+        \begin{align*}
+            A & = \begin{bmatrix}
+                      - 2 & - 5 & 8    & 0 & - 17 \\
+                      1   & 3   & - 5  & 1 & 5    \\
+                      3   & 11  & - 19 & 7 & 1    \\
+                      1   & 7   & - 13 & 5 & - 3
+                  \end{bmatrix} \\
+            B & = \begin{bmatrix}
+                      1 & 0 & 1   & 0 & 1   \\
+                      0 & 1 & - 2 & 0 & 3\, \\
+                      0 & 0 & 0   & 1 & - 5 \\
+                      0 & 0 & 0   & 0 & 0   \\
+                  \end{bmatrix}
+        \end{align*}
+    \]}
+
+\solve{
+    \begin{enumerate}[label=(\alph*)]
+        \item \( \mathrm{rank}(A) = \mathrm{rank}(B) = 3,\) \\
+              \( \mathrm{nullity}(A) = \mathrm{nullity}(B) = 2 \). \\
+        \item \( \mrN (A) = \mrN (B) = \mathrm{span}(S_N)\), where \[
+                  S_N = \left\{
+                  \begin{bmatrix}
+                      -1 \\
+                      2  \\
+                      1  \\
+                      0  \\
+                      0  \\
+                  \end{bmatrix},
+                  \begin{bmatrix}
+                      - 1 \\
+                      - 3 \\
+                      0   \\
+                      5   \\
+                      1   \\
+                  \end{bmatrix}
+                  \right\}.
+              \]
+        \item \( \mrR (A) = \mrR (B) = \mathrm{span}(S_R)\), where \[
+                  S_R = \left\{
+                  \begin{bmatrix}
+                      1 & 0 & 1 & 0 & 1 \\
+                  \end{bmatrix},
+                  \begin{bmatrix}
+                      0 & 1 & -2 & 0 & 3 \\
+                  \end{bmatrix},
+                  \begin{bmatrix}
+                      0 & 0 & 0 & 1 & -5 \\
+                  \end{bmatrix}
+                  \right\}.
+              \]
+        \item \( \mrC (A) \) is spanned by the independent columns of \( A \), which can be found by the correspondant pivot columns of \( B \), \\
+              \( \therefore \mrC (A) = \mathrm{span}(S_C)\), where \[
+                  S_C = \left\{
+                  \begin{bmatrix}
+                      -2 \\
+                      1  \\
+                      3  \\
+                      1  \\
+                  \end{bmatrix},
+                  \begin{bmatrix}
+                      - 5 \\
+                      3   \\
+                      11  \\
+                      7   \\
+                  \end{bmatrix},
+                  \begin{bmatrix}
+                      0 \\
+                      1 \\
+                      7 \\
+                      5
+                  \end{bmatrix}
+                  \right\}.
+              \]
+        \item The rows of \( A \) are not linearly independent, since the rank of \( A \) is
+              less than the number of rows. \\
+        \item We can easily check the answers by looking at the correspondant columns of \( B
+              \)
+              \begin{enumerate}[label=(\roman*)]
+                  \item \( \{ \bma_1, \bma_2, \bma_4 \} \) is linearly independent. \\
+                  \item \( \{ \bma_1, \bma_2, \bma_3 \} \) is not linearly independent. \\
+                  \item \( \{ \bma_1, \bma_3, \bma_5 \} \) is not linearly independent. \\
+              \end{enumerate}
+    \end{enumerate}
+}
+
+\qs{}{(CH4.6 P206 Q62) Determine whether \[
+        \bmb = \begin{bmatrix}
+            - 9 \\ 11 \\ - 25
+        \end{bmatrix}
+    \] is in the column space of \[
+        A = \begin{bmatrix}
+            5   & 4 & 4   \\
+            - 3 & 1 & - 2 \\
+            1   & 0 & 8
+        \end{bmatrix}.
+    \] If it is, write \( \bmb \) as a linear combination of the column vectors of \(
+    A \). }
+
+\solve{
+    \[ A \triangleq \begin{bmatrix}
+            \bma_1 & \bma_2 & \bma_3
+        \end{bmatrix}\]
+    Do row opeartions on \( [\, A \,|\, \bmb \,] \):
+    \[
+        [\, A \,|\, \bmb \,] \sim \begin{bmatrix}
+            1 & 0 & 0 & - 1 \\
+            0 & 1 & 0 & 2\, \\
+            0 & 0 & 1 & - 3
+        \end{bmatrix}.
+    \]
+    \( \therefore \bmb = -\bma_1 + 2\bma_2 - 3\bma_3 \).
+}
+
+\end{document}

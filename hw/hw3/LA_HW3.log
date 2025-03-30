@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.2)  10 MAR 2025 19:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.2)  20 MAR 2025 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/la-hw-nccu/hw/hw2/LA_HW2.tex
-(c:/la-hw-nccu/hw/hw2/LA_HW2.tex
+**c:/la-hw-nccu/hw/hw3/LA_HW3.tex
+(c:/la-hw-nccu/hw/hw3/LA_HW3.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
 (C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1226,12 +1226,13 @@ File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: UTF8.enc 2021/10/16 4.8.5
 ) (C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/cjk/UTF8\UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
-) (LA_HW2.aux)
-\openout1 = `LA_HW2.aux'.
+)
+No file LA_HW3.aux.
+\openout1 = `LA_HW3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 17.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 17.
- (C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/newpx\omlnpxmi.fd
+(C:\Users\jaosn\AppData\Local\Programs\MiKTeX\tex/latex/newpx\omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
 LaTeX Font Info:    ... okay on input line 17.
@@ -1428,198 +1429,54 @@ File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfT
 {C:/Users/jaosn/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
 ]
-\g__tikzsymbols_savebox_F_0 g 0 G_10.53937_Laughey_1_none_none_box=\box149
-
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+c:/la-hw-nccu/hw/hw3/LA_HW3.tex:34: Missing \endcsname inserted.
 <to be read again> 
-                   \relax 
-l.89 matrix $\overline{X}$ does not exist. }
-                                             [1
+                   \protect 
+l.34 }
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
 
-{C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newpx/px-lms.enc}]
-
-[2]
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Misplaced \crcr.
-\tbl_crcr:n ...l_count_missing_cells:n {#1}}\crcr 
-                                                  
-l.245 }
-       
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Extra }, or forgotten $.
-\endarray ->\tbl_crcr:n {endarray}\egroup 
-                                          \UseTaggingSocket {tbl/finalize}\t...
-l.245 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Extra }, or forgotten $.
-\endarray ...tbl_restore_outer_cell_data: \egroup 
-                                                  \@arrayright \gdef \@pream...
-l.245 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Extra \right.
-\endbmatrix ->\endmatrix \right ]
-                                 
-l.245 }
-       
-I'm ignoring a \right that had no matching \left.
-
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: LaTeX Error: \begin{equation*} on input line 245 ended by \end{bmatrix}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.245 }
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Missing $ inserted.
-<inserted text> 
-                $
-l.245 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Display math should end with $$.
+c:/la-hw-nccu/hw/hw3/LA_HW3.tex:34: Missing \endcsname inserted.
 <to be read again> 
-                   \endgroup 
-l.245 }
-       
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Missing $ inserted.
-<inserted text> 
-                $
-l.245 }
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Missing $ inserted.
-<inserted text> 
-                $
-l.245 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+                   \protect 
+l.34 }
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
 
 
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.245 }
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: LaTeX Error: \begin{document} ended by \end{equation*}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.245 }
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Missing $ inserted.
-<inserted text> 
-                $
-l.245 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Display math should end with $$.
+c:/la-hw-nccu/hw/hw3/LA_HW3.tex:34: Missing number, treated as zero.
 <to be read again> 
-                   \endgroup 
-l.245 }
-       
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
+                   \c@* 
+l.34 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:245: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.245 }
-       
-Things are pretty mixed up, but I think the worst is over.
+)
+! Incomplete \iffalse; all text was ignored after line 34.
+<inserted text> 
+                \fi 
+<*> c:/la-hw-nccu/hw/hw3/LA_HW3.tex
+                                   
+The file ended while I was skipping conditional text.
+This kind of error happens when you say `\if...' and forget
+the matching `\fi'. I've inserted a `\fi'; this might work.
 
+! Emergency stop.
+<*> c:/la-hw-nccu/hw/hw3/LA_HW3.tex
+                                   
+*** (job aborted, no legal \end found)
 
-
-[3]
-
-c:/la-hw-nccu/hw/hw2/LA_HW2.tex:305: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.305     on the third column. }
-                                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-
-[4] (LA_HW2.aux)
- ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2022/07/14>
- ***********
- ) 
+ 
 Here is how much of TeX's memory you used:
- 39228 strings out of 473899
- 781246 string characters out of 5726500
- 1257104 words of memory out of 5000000
- 61317 multiletter control sequences out of 15000+600000
- 590087 words of font info for 126 fonts, out of 8000000 for 9000
+ 39077 strings out of 473899
+ 777987 string characters out of 5726500
+ 1236113 words of memory out of 5000000
+ 61204 multiletter control sequences out of 15000+600000
+ 584462 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,12n,110p,712b,1367s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXMI.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXMI_gnu.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxmiaX.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/jaosn/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsym.pfb>
-Output written on LA_HW2.pdf (5 pages, 193418 bytes).
-PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 107i,7n,110p,712b,1367s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
