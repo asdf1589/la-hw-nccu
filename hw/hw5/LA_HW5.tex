@@ -1,0 +1,195 @@
+\documentclass{report}
+
+\usepackage{ctex}
+
+\input{../module/preamble}
+\input{../module/macros}
+\input{../module/letterfonts}
+
+\ctexset{
+    today=old
+}
+
+\title{\Huge{Linear Algebra}\\ Assignment 5}
+\author{\Large{110307039\ 財管四\ 黃柏維}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\cleardoublepage
+
+\qs{}{(CH4.7 P216 Q16) Find the coordinate matrix of \[ \bmx = (0, - 20, 7, 15) \] in \( \RR[4] \) relative to the basis \[ B' = \{ (9, - 3, 15, 4),
+        (3, 0, 0, 1), (0, - 5, 6, 8), (3, - 4, 2, - 3) \}. \]
+}
+
+\solve{
+    Let \[
+        \bmx = x_1(9, -3, 15, 4) + x_2(3, 0, 0, 1) + x_3(0, -5, 6, 8) + x_4(3, -4, 2, -3),
+    \]
+    then we have \[
+        \begin{bmatrix}
+            9  & 3 & 0  & 3\, \\
+            -3 & 0 & -5 & -4 \\
+            15 & 0 & 6  & 2  \\
+            4  & 1 & 8\, & -3
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            x_3 \\
+            x_4
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0   \\
+            -20 \\
+            7   \\
+            15
+        \end{bmatrix}.
+    \]
+    We can use the Gauss elimination method to solve this system of equations. The
+    result is \[
+        \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            x_3 \\
+            x_4
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            -1 \\
+            1  \\
+            3  \\
+            2
+        \end{bmatrix}.
+    \]
+}
+
+\qs{}{(CH4.7 P216 Q22) Find the transition matrix form \( B \) to \( B' \). \[
+        B = \{ (1, 0, 0), (0, 1, 0), (0, 0, 1) \}, \quad
+        B' = \{ (1, 3, - 1), (2, 7, - 4), (2, 9, - 7) \}
+    \]
+}
+
+\solve{
+\[
+    \begin{bmatrix}
+        T
+    \end{bmatrix}_{B}^{B'}
+    =
+    \begin{bmatrix}
+        1\, & 2  & 2   \\
+        3  & 7  & 9   \\
+        -1 & -4 & - 7
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        - 13 & 6   & 4   \\
+        12   & - 5 & - 3 \\
+        - 5  & 2   & 1
+    \end{bmatrix}
+\]
+}
+
+\qs{}{(CH4.7 P217 Q38) \begin{enumerate}[label=(\alph*)]
+        \item Find the transition matrix from \( B \) to \( B' \).
+        \item Find the transition matrix from \( B' \) to \( B \).
+        \item Verity that two transition matrices are inverses of each other.
+        \item Find the coordinate matrix \( \begin{bmatrix} \bmx \end{bmatrix}_{B}, \) given the coordinate matrix \( \begin{bmatrix} \bmx \end{bmatrix}_{B'} \).
+    \end{enumerate}
+    \[
+        \begin{align*}
+             & B = \{ (2, - 2), (6, 3) \}, B' = \{ (1, 1), (32, 31) \}, \\[0.5em]
+             & \begin{bmatrix}
+                   \bmx
+               \end{bmatrix}_{B} = \begin{bmatrix}
+                                       2 \\
+                                       - 1
+                                   \end{bmatrix}
+        \end{align*}
+    \]
+}
+
+\solve{
+\begin{enumerate}[label=(\alph*)]
+\item By \[
+    (2, -2) = - 126 \cdot (1, 1) + 4 \cdot (32, 31)
+\] and \[
+    (6, 3) = - 90 \cdot (1, 1) + 3 \cdot (32, 31)
+\]
+\[
+    \implies \begin{bmatrix}
+        T
+    \end{bmatrix}_{B}^{B'} = \begin{bmatrix}
+        -126 & -90 \\
+        4    & 3
+    \end{bmatrix}
+\]
+
+\item By \[
+    (1, 1) = - \frac{1}{6} \cdot (2, -2) + \frac{2}{9} \cdot (6, 3)
+\] and \[
+    (32, 31) = - 5 \cdot (2, -2) + 7 \cdot (6, 3)
+\]
+\[
+    \implies \begin{bmatrix}
+        T
+    \end{bmatrix}_{B'}^{B} = \begin{bmatrix}
+        -\frac{1}{6} & -5 \\
+        \frac{2}{9}  & 7
+    \end{bmatrix}
+\]
+
+\item \[
+    \begin{bmatrix}
+        -126 & -90 \\
+        4    & 3
+    \end{bmatrix}^{-1} = \begin{bmatrix}
+        -\frac{1}{6} & -5 \\
+        \frac{2}{9}  & 7
+    \end{bmatrix}
+\] and \[
+    \begin{bmatrix}
+        -\frac{1}{6} & -5 \\
+        \frac{2}{9}  & 7
+    \end{bmatrix}^{-1} = \begin{bmatrix}
+        -126 & -90 \\
+        4    & 3
+    \end{bmatrix}.
+\]
+
+\item \[
+    \begin{align*}
+        & \begin{bmatrix}
+            \bmx
+        \end{bmatrix}_{B} = \begin{bmatrix}
+            T 
+            \end{bmatrix}_{B'}^{B} \begin{bmatrix}
+                \bmx
+            \end{bmatrix}_{B'} \\[0.5em]
+            \implies & \begin{bmatrix}
+                \bmx
+            \end{bmatrix}_{B} = \begin{bmatrix}
+                -\frac{1}{6} & -5 \\
+                \frac{2}{9}  & 7
+            \end{bmatrix} \begin{bmatrix}
+                2 \\
+                - 1
+            \end{bmatrix} \\[0.5em]
+            \implies & \begin{bmatrix}
+                \bmx
+            \end{bmatrix}_{B} = \begin{bmatrix}
+                \frac{14}{3} \\
+                - \frac{59}{9}
+            \end{bmatrix}
+    \end{align*}
+\]
+}
+
+\end{document}

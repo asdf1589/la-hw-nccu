@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1743324582.54513 "c:/la-hw-nccu/hw/hw4/LA_HW4.tex" "LA_HW4.pdf" "LA_HW4" 1743324584.48533 2
+["pdflatex"] 1743659335.4152 "c:/la-hw-nccu/hw/hw4/LA_HW4.tex" "LA_HW4.pdf" "LA_HW4" 1743659337.48147 2
   "../module/letterfonts.tex" 1743323545 9093 a84cc337fb4c8ae1b3b07a92a2282293 ""
   "../module/macros.tex" 1740828129 1390 e02343db25b6b0a7b14fed906327ad7b ""
   "../module/preamble.tex" 1742658640 19486 5bb27c3adb412f433636425b9b3c225a ""
@@ -314,7 +314,7 @@
   "C:/Users/jaosn/AppData/Local/Programs/MiKTeX/tex/latex/zhnumber/zhnumber.sty" 1657817710 38160 aafa8d740e4f21b62a4acd4835e54359 ""
   "C:/WINDOWS/Fonts/msyh.ttc" 1740466162 19704352 1e10e74402e59d54499af795caf0b135 ""
   "C:/WINDOWS/Fonts/simsun.ttc" 1740466163 18070492 992f2bdc407dde6953c5ed83ceac9a91 ""
-  "LA_HW4.aux" 1743324584 284 4d8fe54b0260e96b8424c16509874d9c "pdflatex"
+  "LA_HW4.aux" 1743659337 284 4d8fe54b0260e96b8424c16509874d9c "pdflatex"
   "LA_HW4.tex" 1743324579 16169 3d7e83556fc2f5d9e5d212ae52f18a0e ""
   "c:/la-hw-nccu/hw/hw4/LA_HW4.tex" 1743324579 16169 3d7e83556fc2f5d9e5d212ae52f18a0e ""
   (generated)

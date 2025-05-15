@@ -1,0 +1,767 @@
+\documentclass{report}
+
+\usepackage{ctex}
+
+\input{../module/preamble}
+\input{../module/macros}
+\input{../module/letterfonts}
+
+\ctexset{
+    today=old
+}
+
+\title{\Huge{Linear Algebra}\\ Assignment 8}
+\author{\Large{110307039\ 財管四\ 黃柏維}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\cleardoublepage
+
+\qs{}{(CH6.4 Q12) Find the matrix \( A' \) for \( T \) relative to the basis \( B' \), where \[ \begin{align*}
+             & T: \RR[3] \to \RR[3],                          \\
+             & T(x, y, z) = (x, x + 2y, x + y + 3z),          \\
+             & B' = \{ (1, - 1, 0), (0, 0, 1), (0, 1, - 1) \}
+        \end{align*}
+    \]}
+
+\solve{
+    \begin{align*}
+        T(1, - 1, 0) & = (1, - 1, 0) \\
+        T(0, 0, 1)   & = (0, - 2, 3) \\
+        T(0, 1, - 1) & = (0, 2, - 2)
+    \end{align*}
+    Thus the matrix \( A' \) is \[ A' = \begin{bmatrix}
+            1 & - 1 & 0  \\
+            0 & - 2 & 3  \\
+            0 & 2   & -2
+        \end{bmatrix} \]
+}
+
+\qs{}{(CH6.4 Q14) Let \( B = \{ (1, 1), ( - 2, 3) \}, B' = \{ (1, - 1), (0, 1) \}, and \left[ \bmv \right]_{B'} = \begin{matrix}
+        1 & - 3
+    \end{matrix}^T \), and let \[
+        A = \begin{bmatrix}
+            3 & 2 \\
+            0 & 4
+        \end{bmatrix}
+    \]
+    be the matrix for \( T: \RR[2] \to \RR[2] \) relative to \( B. \)
+
+    \begin{enumerate}[label=(\alph*)]
+        \item Find the transition matrix \( P \) from \( B' \) to \( B. \)
+        \item Use the matrices \( P \) and \( A \) to find \( \left[ \bmv \right]_B \) and \(
+              \left[ T(\bmv) \right]_{B} \), where \( \left[ \bmv\right]_{B'} = \begin{matrix}
+                  - 1 & 2
+              \end{matrix}^T \).
+        \item Find \( P^{-1} \) and \( A' \) (the matrix for \( T \) relative to \( B' \)).
+        \item Find \( \begin{bmatrix} T(\bmv) \end{bmatrix}_{B'} \) two ways.
+    \end{enumerate}
+}
+
+\solve{
+    \begin{enumerate}[label=(\alph*)]
+        \item \[
+                  P \;=\;
+                  \begin{bmatrix}
+                      \dfrac15  & \dfrac25 \\[4pt]
+                      -\dfrac25 & \dfrac15
+                  \end{bmatrix},
+                  \qquad
+                  [\mathbf{x}]_{B}=P\,[\mathbf{x}]_{B'}.
+              \]
+
+        \item \([\mathbf{v}]_{B'}=\begin{bmatrix}-1\\2\end{bmatrix}\):
+
+              \[
+                  [\mathbf{v}]_{B}
+                  =P\,[\mathbf{v}]_{B'}
+                  =
+                  \begin{bmatrix}\tfrac35\\[4pt]\tfrac45\end{bmatrix},
+                  \qquad
+                  [T(\mathbf{v})]_{B}
+                  =A\,[\mathbf{v}]_{B}
+                  =
+                  \begin{bmatrix}\tfrac{17}{5}\\[4pt]\tfrac{16}{5}\end{bmatrix}.
+              \]
+
+        \item \[
+                  P^{-1}
+                  =
+                  \begin{bmatrix}
+                      1 & -2  \\
+                      2 & \;1
+                  \end{bmatrix},
+                  \qquad
+                  A'
+                  =P^{-1} A P
+                  =
+                  \begin{bmatrix}
+                      3  & 0 \\
+                      -2 & 4
+                  \end{bmatrix}.
+              \]
+
+        \item      \[
+                  \begin{aligned}
+                      [\;T(\mathbf{v})\;]_{B'}
+                       & =A'\,[\mathbf{v}]_{B'}
+                      =\begin{bmatrix}3&0\\-2&4\end{bmatrix}
+                      \begin{bmatrix}-1\\2\end{bmatrix}
+                      =\begin{bmatrix}-3\\10\end{bmatrix}, \\[6pt]
+                      [\;T(\mathbf{v})\;]_{B'}
+                       & =P^{-1}[\;T(\mathbf{v})\;]_{B}
+                      =\begin{bmatrix}1&-2\\2&1\end{bmatrix}
+                      \begin{bmatrix}\tfrac{17}{5}\\[4pt]\tfrac{16}{5}\end{bmatrix}
+                      =\begin{bmatrix}-3\\10\end{bmatrix}.
+                  \end{aligned}
+              \]
+    \end{enumerate}
+}
+
+\qs{}{(CH6.4 Q22) Use the matrix \( P \) to show that the matrices \( A \) and \( A' \) are similar.
+    \[
+        P = \begin{bmatrix}
+            1 & 1 & 1 \\
+            0 & 1 & 1 \\
+            0 & 0 & 1
+        \end{bmatrix}, \quad A = \begin{bmatrix}
+            5 & 0 & 0 \\
+            0 & 3 & 0 \\
+            0 & 0 & 1
+        \end{bmatrix}, \quad A' = \begin{bmatrix}
+            5 & 2 & 2 \\
+            0 & 3 & 2 \\
+            0 & 0 & 1
+        \end{bmatrix}
+    \]
+}
+
+\solve{
+    To prove that \(A\) and \(A'\) are similar we must show that
+    \(
+    A' = P^{-1}AP.
+    \)
+
+    \[
+        P
+        =\begin{bmatrix}
+            1 & 1 & 1 \\
+            0 & 1 & 1 \\
+            0 & 0 & 1
+        \end{bmatrix},
+        \qquad
+        A
+        =\begin{bmatrix}
+            5 & 0 & 0 \\
+            0 & 3 & 0 \\
+            0 & 0 & 1
+        \end{bmatrix}.
+    \]
+
+    \textbf{1.  Compute \(P^{-1}\).}
+
+    Because \(P\) is unit upper-triangular, its inverse is also unit
+    upper-triangular:
+
+    \[
+        P^{-1}
+        =\begin{bmatrix}
+            1 & -1 & 0  \\
+            0 & 1  & -1 \\
+            0 & 0  & 1
+        \end{bmatrix}.
+    \]
+
+    \textbf{2.  Evaluate \(P^{-1}AP\).}
+
+    \[
+        \begin{aligned}
+            P^{-1}A
+             & =\begin{bmatrix}
+                    1 & -1 & 0  \\
+                    0 & 1  & -1 \\
+                    0 & 0  & 1
+                \end{bmatrix}
+            \begin{bmatrix}
+                5 & 0 & 0 \\
+                0 & 3 & 0 \\
+                0 & 0 & 1
+            \end{bmatrix}
+            =\begin{bmatrix}
+                 5 & -3 & 0  \\
+                 0 & 3  & -1 \\
+                 0 & 0  & 1
+             \end{bmatrix},    \\[10pt]
+            P^{-1}AP
+             & =\begin{bmatrix}
+                    5 & -3 & 0  \\
+                    0 & 3  & -1 \\
+                    0 & 0  & 1
+                \end{bmatrix}
+            \begin{bmatrix}
+                1 & 1 & 1 \\
+                0 & 1 & 1 \\
+                0 & 0 & 1
+            \end{bmatrix}
+            =\begin{bmatrix}
+                 5 & 2 & 2 \\
+                 0 & 3 & 2 \\
+                 0 & 0 & 1
+             \end{bmatrix}
+            =A'.
+        \end{aligned}
+    \]
+
+    \textbf{3.  Conclusion.}
+
+    Since \(A' = P^{-1}AP\) (equivalently \(A = PAP^{-1}\)), the matrices \(A\) and
+    \(A'\) are similar. Therefore they represent the same linear transformation
+    with respect to two different bases.
+
+}
+
+\qs{}{(CH7.1 Q6) Verify that \( \lambda_i \) is an eigenvalue of \( A \) and that \( \bmx_i \) is a corresponding eigenvector.
+    \[
+        A = \begin{bmatrix}
+            4 & - 1 & 3 \\
+            0 & 2   & 1 \\
+            0 & 0   & 3
+        \end{bmatrix}, \quad \begin{matrix}
+            \lambda_1 = 4, \quad \bmx_1 = ( 1, 0, 0) \\
+            \lambda_2 = 2, \quad \bmx_2 = ( 1, 2, 0) \\
+            \lambda_3 = 3, \quad \bmx_3 = ( - 2, 1, 1)
+        \end{matrix}
+    \]}
+
+\solve{
+    \textbf{Verification that each \(\lambda_i\) is an eigenvalue of \(A\) with eigenvector \(\mathbf{x}_i\).}
+
+    \[
+        A
+        =\begin{bmatrix}
+            4 & -1 & 3 \\
+            0 & 2  & 1 \\
+            0 & 0  & 3
+        \end{bmatrix}
+        \qquad
+        \mathbf{x}_1=\begin{bmatrix}1\\0\\0\end{bmatrix},
+        \;
+        \mathbf{x}_2=\begin{bmatrix}1\\2\\0\end{bmatrix},
+        \;
+        \mathbf{x}_3=\begin{bmatrix}-2\\1\\1\end{bmatrix}.
+    \]
+
+    \begin{enumerate}[label=(\alph*)]
+        \item \emph{Eigenpair} \(\lambda_1 = 4,\; \mathbf{x}_1\):
+
+              \[
+                  A\mathbf{x}_1
+                  =\begin{bmatrix}
+                      4 & -1 & 3 \\
+                      0 & 2  & 1 \\
+                      0 & 0  & 3
+                  \end{bmatrix}
+                  \begin{bmatrix}1\\0\\0\end{bmatrix}
+                  =\begin{bmatrix}4\\0\\0\end{bmatrix}
+                  =4\begin{bmatrix}1\\0\\0\end{bmatrix}
+                  =\lambda_1\mathbf{x}_1.
+              \]
+
+        \item \emph{Eigenpair} \(\lambda_2 = 2,\; \mathbf{x}_2\):
+
+              \[
+                  A\mathbf{x}_2
+                  =\begin{bmatrix}
+                      4 & -1 & 3 \\
+                      0 & 2  & 1 \\
+                      0 & 0  & 3
+                  \end{bmatrix}
+                  \begin{bmatrix}1\\2\\0\end{bmatrix}
+                  =\begin{bmatrix}4-2\\4\\0\end{bmatrix}
+                  =\begin{bmatrix}2\\4\\0\end{bmatrix}
+                  =2\begin{bmatrix}1\\2\\0\end{bmatrix}
+                  =\lambda_2\mathbf{x}_2.
+              \]
+
+        \item \emph{Eigenpair} \(\lambda_3 = 3,\; \mathbf{x}_3\):
+
+              \[
+                  A\mathbf{x}_3
+                  =\begin{bmatrix}
+                      4 & -1 & 3 \\
+                      0 & 2  & 1 \\
+                      0 & 0  & 3
+                  \end{bmatrix}
+                  \begin{bmatrix}-2\\1\\1\end{bmatrix}
+                  =\begin{bmatrix}-8-1+3\\2+1\\3\end{bmatrix}
+                  =\begin{bmatrix}-6\\3\\3\end{bmatrix}
+                  =3\begin{bmatrix}-2\\1\\1\end{bmatrix}
+                  =\lambda_3\mathbf{x}_3.
+              \]
+    \end{enumerate}
+
+    \[
+        A\mathbf{x}_i=\lambda_i\mathbf{x}_i\quad\text{for }i=1,2,3.
+    \]
+
+    Hence each \(\lambda_i\) is an eigenvalue of \(A\) and each \(\mathbf{x}_i\) is
+    a corresponding eigenvector.
+
+}
+
+\qs{}{(CH7.1 Q12) Determine whether \( \bmx \) is an eigenvector of \( A. \)
+    \[
+        A = \begin{bmatrix}
+            1   & 0   & 5   \\
+            - 2 & 0   & - 2 \\
+            3   & - 3 & 1
+        \end{bmatrix}
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item \( \bmx = (1, 1, 0) \)
+        \item \( \bmx = ( - 5, 2, 1) \)
+        \item \( \bmx = ( 0, 0, 0) \)
+        \item \( \bmx = ( 2 \sqrt{6} - 3, - 2 \sqrt{6} + 6, 3) \)
+    \end{enumerate}
+
+}
+
+\solve{
+    \textbf{Test for each candidate vector \(\mathbf{x}\) whether \(A\mathbf{x}=\lambda\mathbf{x}\) for some scalar \(\lambda\).}
+
+    \[
+        A=\begin{bmatrix}
+            1  & 0  & 5  \\
+            -2 & 0  & -2 \\
+            3  & -3 & 1
+        \end{bmatrix}
+    \]
+
+    \begin{enumerate}[label=(\alph*)]
+        \item \(\mathbf{x}=(1,1,0)^{\mathsf T}\)
+
+              \[
+                  A\mathbf{x}
+                  =\begin{bmatrix}
+                      1 \\-2\\0
+                  \end{bmatrix},\qquad
+                  \frac{1}{1}\neq\frac{-2}{1},\;
+                  \mathbf{x}_3=0.
+              \]
+              The three coordinates are not in a common ratio, so no scalar \(\lambda\)
+              satisfies \(A\mathbf{x}=\lambda\mathbf{x}\). \( \textbf{Not an eigenvector.} \)
+
+        \item \(\mathbf{x}=(-5,2,1)^{\mathsf T}\)
+
+              \[
+                  A\mathbf{x}
+                  =\begin{bmatrix}
+                      0 \\ 8\\ -20
+                  \end{bmatrix},\qquad
+                  \frac{0}{-5}\neq\frac{8}{2}.
+              \]
+              No common ratio exists. \( \textbf{Not an eigenvector.} \)
+
+        \item \(\mathbf{x}=\mathbf{0}\)
+
+              By definition the zero vector can \emph{never} be an eigenvector (eigenvectors
+              must be non-zero). \( \textbf{Not an eigenvector.} \)
+
+        \item \(\mathbf{x}=(2\sqrt{6}-3,\,-2\sqrt{6}+6,\,3)^{\mathsf T}\)
+
+              \[
+                  A\mathbf{x}
+                  =\begin{bmatrix}
+                      2\sqrt{6}+12 \\
+                      -4\sqrt{6}   \\
+                      12\sqrt{6}-24
+                  \end{bmatrix},\qquad
+                  \frac{2\sqrt{6}+12}{2\sqrt{6}-3}\neq
+                  \frac{-4\sqrt{6}}{-2\sqrt{6}+6}.
+              \]
+              Again the coordinates fail to share a common ratio. \( \textbf{Not an
+                  eigenvector.} \)
+    \end{enumerate}
+}
+
+\qs{}{(CH7.1 Q26) Find (a) the characteristic equation and (b) the eigenvalues of (and corresponding eigenvectors) of the matrix
+    \[
+        A = \begin{bmatrix}
+            1           & - \frac{3}{2} & \frac{5}{2} \\
+            - 2         & \frac{13}{2}  & - 10        \\
+            \frac{3}{2} & - \frac{9}{2} & 8
+        \end{bmatrix}
+    \]
+}
+
+\solve{
+    \[
+        A \;=\;
+        \begin{bmatrix}
+            1        & -\tfrac32     & \tfrac52 \\
+            -2       & \tfrac{13}{2} & -10      \\
+            \tfrac32 & -\tfrac92     & 8
+        \end{bmatrix}
+    \]
+
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Characteristic equation}
+
+              \[
+                  \det\!\bigl(A-\lambda I\bigr)
+                  =\lambda^{3}-\frac{31}{2}\lambda^{2}
+                  +\frac{59}{4}\lambda-\frac{29}{8}
+                  =\frac18\,(2\lambda-1)^{2}(2\lambda-29)=0.
+              \]
+
+        \item \textbf{Eigenvalues and eigenvectors}
+
+              \[
+                  \begin{aligned}
+                      \lambda_1 & =\frac12
+                                &                            & \text{(algebraic multiplicity $2$)} \\[4pt]
+                                & \quad\text{eigenvectors: }
+                      \operatorname{span}\!\left\{
+                      \begin{bmatrix}3\\1\\0\end{bmatrix},
+                      \begin{bmatrix}-5\\0\\1\end{bmatrix}
+                      \right\};                                                                    \\[12pt]
+                      \lambda_2 & =\frac{29}{2}
+                                &                            & \text{(algebraic multiplicity $1$)} \\[4pt]
+                                & \quad\text{eigenvectors: }
+                      \operatorname{span}\!\left\{
+                      \begin{bmatrix}1\\-4\\3\end{bmatrix}
+                      \right\}.
+                  \end{aligned}
+              \]
+    \end{enumerate}
+
+}
+
+\qs{}{(CH7.2 Q14) Find (if possible) a nonsingular matrix \( P \) such that \( P^{-1}AP \) is diagonal. Verify that \( P^{-1}AP \) is a diagonal matrix with the eigenvalues on the main diagonal.
+    \[
+        A = \begin{bmatrix}
+            2 & 0 & 0 \\
+            4 & 4 & 0 \\
+            0 & 4 & 4
+        \end{bmatrix}
+    \]
+}
+
+\solve{
+    \[
+        A=\begin{bmatrix}
+            2 & 0 & 0 \\
+            4 & 4 & 0 \\
+            0 & 4 & 4
+        \end{bmatrix}
+    \]
+
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Characteristic polynomial}
+
+              \[
+                  \det(A-\lambda I)=
+                  \det\!
+                  \begin{bmatrix}
+                      2-\lambda & 0         & 0         \\
+                      4         & 4-\lambda & 0         \\
+                      0         & 4         & 4-\lambda
+                  \end{bmatrix}
+                  =(2-\lambda)\bigl((4-\lambda)^2\bigr)
+                  =(2-\lambda)(4-\lambda)^2.
+              \]
+
+              Hence
+              \[
+                  \lambda_1=2,\qquad \lambda_2=\lambda_3=4\;(\text{algebraic multiplicity }2).
+              \]
+
+        \item \textbf{Eigenvectors}
+
+              \smallskip
+              \[
+                  \begin{aligned}
+                      \lambda=2:\; &
+                      (A-2I)\mathbf{x}=0
+                      \;\Longrightarrow\;
+                      \mathbf{x}=t\begin{bmatrix}1\\-2\\4\end{bmatrix},
+                      \;\text{so }E_{2}=\operatorname{span}\!\left\{\begin{bmatrix}1\\-2\\4\end{bmatrix}\right\},\;
+                      \dim E_{2}=1.  \\[6pt]
+                      \lambda=4:\; &
+                      (A-4I)\mathbf{x}=0
+                      \;\Longrightarrow\;
+                      \mathbf{x}=s\begin{bmatrix}0\\0\\1\end{bmatrix},
+                      \;\text{so }E_{4}=\operatorname{span}\!\left\{\begin{bmatrix}0\\0\\1\end{bmatrix}\right\},\;
+                      \dim E_{4}=1.
+                  \end{aligned}
+              \]
+
+        \item \textbf{Diagonalizability test}
+
+              To diagonalize \(A\) we need
+              \[
+                  \sum_{\lambda}\dim E_{\lambda}=n=3.
+              \]
+              Here \( \dim E_{2}+\dim E_{4}=1+1=2<3, \) so \(A\) does \emph{not} possess
+              three linearly independent eigenvectors.
+
+        \item \textbf{Conclusion}
+
+              Because the geometric multiplicity of \(\lambda=4\) is \(1<2\) (its algebraic
+              multiplicity), matrix \(A\) is \emph{not} diagonalizable. Consequently, there
+              is no nonsingular matrix \(P\) for which \(P^{-1}AP\) is diagonal.
+    \end{enumerate}
+}
+
+\qs{}{(CH7.2 Q20) Show that the matrix \( A \) is not diagonalizable, where \[
+        A = \begin{bmatrix}
+            3 & 2   & - 2 \\
+            0 & - 2 & 3   \\
+            0 & 0\, & - 2
+        \end{bmatrix}
+    \]
+}
+
+\solve{
+    \section*{1.  Characteristic polynomial}
+
+    Because \(A\) is upper-triangular, its eigenvalues are the diagonal entries.
+    Formally,
+    \[
+        \chi_A(\lambda)=\det(A-\lambda I)
+        =(3-\lambda)(-2-\lambda)^2.
+    \]
+
+    \[
+        \lambda_1=3\;(\text{alg.\,mult. }1),\qquad
+        \lambda_2=-2\;(\text{alg.\,mult. }2)
+    \]
+
+    \section*{2.  Eigenspaces}
+
+    \subsection*{(a)  \(\lambda=3\)}
+
+    \[
+        A-3I=
+        \begin{bmatrix}
+            0 & 2  & -2 \\
+            0 & -5 & 3  \\
+            0 & 0  & -5
+        \end{bmatrix},
+        \qquad
+        (A-3I)\mathbf{x}=0
+        \Longrightarrow
+        \mathbf{x}=t\begin{bmatrix}1\\0\\0\end{bmatrix}.
+    \]
+
+    \[
+        E_{3}=\operatorname{span}\!\left\{\begin{bmatrix}1\\0\\0\end{bmatrix}\right\},
+        \qquad
+        \dim E_{3}=1.
+    \]
+
+    \subsection*{(b)  \(\lambda=-2\)}
+
+    \[
+        A+2I=
+        \begin{bmatrix}
+            5 & 2 & -2 \\
+            0 & 0 & 3  \\
+            0 & 0 & 0
+        \end{bmatrix},
+        \qquad
+        (A+2I)\mathbf{x}=0
+        \Longrightarrow
+        \mathbf{x}=s\begin{bmatrix}2\\-5\\0\end{bmatrix}.
+    \]
+
+    \[
+        E_{-2}=\operatorname{span}\!\left\{\begin{bmatrix}2\\-5\\0\end{bmatrix}\right\},
+        \qquad
+        \dim E_{-2}=1.
+    \]
+
+    \section*{3.  Diagonalizability test}
+
+    A matrix of size \(n=3\) is diagonalizable iff the sum of the geometric
+    multiplicities equals \(n\).
+
+    \[
+        \dim E_{3}+\dim E_{-2}=1+1=2<3.
+    \]
+
+    Hence \(A\) has only two linearly independent eigenvectors.
+
+    \[
+        \text{$A$ is \emph{not} diagonalizable}
+    \]
+
+    The failure arises because the geometric multiplicity of \(\lambda=-2\) (\(1\))
+    is strictly less than its algebraic multiplicity (\(2\)).
+
+}
+
+\qs{}{(CH7.2 Q26) Find the eigenvalues of the matrix \( A \) and determine whether there is a sufficient number of eigenvalues to guarantee the matrix is diagonalizable by Theorem 7.6, where \[
+        A = \begin{bmatrix}
+            4 & 3 & - 2 \\
+            0 & 1 & 1   \\
+            0 & 0 & - 2
+        \end{bmatrix},
+    \] and Theorem 7.6 states that \[ \begin{align*}
+             & \text{If an } n \times n \text{ matrix } A \text{ has } n \; \emph{distinct} \text{ eigenvalues, then the corresponding eigenvectors are linearly} \\
+             & \text{independent and } A \text{ is diagonalizable.}
+        \end{align*}
+    \]
+}
+
+\solve{
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Eigenvalues}
+
+              Because \(A\) is upper-triangular, its eigenvalues are the diagonal entries:
+
+              \[
+                  \lambda_1 = 4,\quad \lambda_2 = 1,\quad \lambda_3 = -2.
+              \]
+
+        \item \textbf{Test for diagonalizability via Theorem 7.6}
+
+              The matrix is \(3\times 3\) (\(n = 3\)) and has \(n\) \emph{distinct}
+              eigenvalues \(\{4,1,-2\}\).
+
+              \[   \begin{align*}
+                       & \text{Therefore, by Theorem 7.6, the three corresponding eigenvectors are linearly independent, } \\
+                       & \text{and } A \text{ is diagonalizable.}
+                  \end{align*}
+              \]
+    \end{enumerate}
+
+}
+
+\qs{}{(CH7.2 Q30) Find  a basis \( B \) for the domain of \( T \) such that the matrix for \( T \) relative to \( B \) is diagonal.
+    \[
+        T: P_2 \to P_2: \\
+        T(c + bx + ax^2) = (3c + a) + (2b + 3a)x + ax^2
+    \]
+}
+
+\solve{
+%----------------------------------------
+%  Diagonalizing the operator T on P_2
+%----------------------------------------
+
+\[
+    T\!\bigl(c+bx+ax^{2}\bigr)
+    =(3c+a)\;+\;(2b+3a)x\;+\;a\,x^{2},
+    \qquad P_{2}\equiv\{\text{polynomials of degree }\le 2\}.
+\]
+
+\subsection*{1.  Matrix of \(T\) in the standard basis \(S=\{1,x,x^{2}\}\)}
+
+Writing a polynomial \(p=c+bx+ax^{2}\) as the column vector \(
+[c\;b\;a]^{\mathsf T}, \) the action of \(T\) is
+
+\[
+    \begin{bmatrix}c\\ b\\ a\end{bmatrix}
+    \;\xmapsto{\,T\,}\;
+    \begin{bmatrix}
+        3c+a \\ 2b+3a\\ a
+    \end{bmatrix}
+    \;=\;
+    \underbrace{\begin{bmatrix}
+            3 & 0 & 1 \\
+            0 & 2 & 3 \\
+            0 & 0 & 1
+        \end{bmatrix}}_{A=[T]_{S}}
+    \begin{bmatrix}
+        c \\ b\\ a
+    \end{bmatrix}.
+\]
+
+\subsection*{2.  Eigenvalues of \(A\)}
+
+Because \(A\) is upper-triangular, its eigenvalues are the diagonal entries:
+
+\[
+    \lambda_{1}=3,\qquad
+    \lambda_{2}=2,\qquad
+    \lambda_{3}=1
+    \quad(\text{all distinct}).
+\]
+
+\subsection*{3.  Eigenvectors}
+
+\[
+    \begin{aligned}
+        \lambda_{1}=3: & \;
+        (A-3I)
+        =\begin{bmatrix}
+             0 & 0  & 1  \\
+             0 & -1 & 3  \\
+             0 & 0  & -2
+         \end{bmatrix}
+        \;\;\Longrightarrow\;\;
+        \mathbf{v}_{1}
+        =\begin{bmatrix}1\\0\\0\end{bmatrix}
+        \;\;(p_{1}=1).      \\[6pt]
+        %
+        \lambda_{2}=2: & \;
+        (A-2I)
+        =\begin{bmatrix}
+             1 & 0 & 1  \\
+             0 & 0 & 3  \\
+             0 & 0 & -1
+         \end{bmatrix}
+        \;\;\Longrightarrow\;\;
+        \mathbf{v}_{2}
+        =\begin{bmatrix}0\\1\\0\end{bmatrix}
+        \;\;(p_{2}=x).      \\[6pt]
+        %
+        \lambda_{3}=1: & \;
+        (A-I)
+        =\begin{bmatrix}
+             2 & 0 & 1 \\
+             0 & 1 & 3 \\
+             0 & 0 & 0
+         \end{bmatrix}
+        \;\;\Longrightarrow\;\;
+        \mathbf{v}_{3}
+        =\begin{bmatrix}-1\\-6\\2\end{bmatrix}
+        \;\;(p_{3}=2x^{2}-6x-1).
+    \end{aligned}
+\]
+
+\subsection*{4.  A diagonalizing basis and the diagonal matrix}
+
+Set
+\[
+    B=\{\,p_{1}=1,\;p_{2}=x,\;p_{3}=2x^{2}-6x-1\,\}.
+\]
+Since the three eigenvalues are distinct,
+\(\{\mathbf{v}_{1},\mathbf{v}_{2},\mathbf{v}_{3}\}\) is linearly independent,
+so \(B\) is a basis of \(P_{2}\).
+
+With \(P=[\,\mathbf{v}_{1}\;\mathbf{v}_{2}\;\mathbf{v}_{3}\,]\) the
+change-of-basis matrix from \(B\) to \(S\),
+
+\[
+    P^{-1}AP
+    =\operatorname{diag}(3,2,1)
+    =\begin{bmatrix}
+        3 & 0 & 0 \\
+        0 & 2 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}.
+\]
+
+\[
+    [T]_{B}=\operatorname{diag}(3,2,1)
+\]
+
+Hence \(T\) is diagonal in the eigenbasis \(B\).
+
+}
+
+\end{document}
